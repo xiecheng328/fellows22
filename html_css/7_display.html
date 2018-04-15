@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            /*width: 200px;*/
+            height: 200px;
+            background: #ff0000;
+        }
+
+        #div2{
+            background: #cccccc;
+        }
+
+        #span1{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+        }
+
+        .style1{
+            width: 200px;
+            height: 200px;
+            /*display: inline;*/
+            display: inline-block;
+        }
+        .div3{
+            background: #ff0000;
+        }
+        .div4{
+            background: #00ff00;
+            /*display: none;*/
+        }
+        .div5{
+            background: #ffff00;
+        }
+
+        .style2{
+            width: 200px;
+            height: 200px;
+            display: block;
+        }
+        .span3{
+            background: #ff0000;
+        }
+        .span4{
+            background: #00ff00;
+        }
+        .span5{
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="div1">
+        <div id="div2">div2</div>
+    </div>
+
+    <span id="span1">spanspanspan</span>-->
+
+    <div class="style1 div3">div3</div>
+    <div class="style1 div4">div4</div>
+    <div class="style1 div5">div5</div>
+
+    <span class="style2 span3">span3</span>
+    <span class="style2 span4">span4</span>
+    <span class="style2 span5">span5</span>
+</body>
+</html>
+
+<!--
+行级元素inline：和行级元素在一行 不能设置宽高
+块级元素block：自己在一行 可以设置宽高
+
+display: inline;  块级 -> 行级
+display: block;  行级 -> 块级
+display: inline-block; 兼容性 既有行级元素特点 又有块级元素特点
+display:none;
+-->
