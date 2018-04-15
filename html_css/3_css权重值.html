@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*#div1{
+            background: #00ff00;
+        }
+
+        .div1{
+            background: #ffff00;
+        }
+
+        div{
+            background: #ff0000!important;
+        }*/
+
+        /*#div2 div{
+            background: #ff0000;
+        }
+
+        #div2 .aa{
+            background: #00ff00;
+        }*/
+        /*.a .b .c .d .e .f .g .h .i .j div{
+            background: #ff0000;
+        }
+
+        #div3{
+            background: #00ff00;
+        }*/
+        .bb{
+            background: #00ff00;
+        }
+        .aa{
+            background: #ff0000;
+        }
+
+        div.aa{
+            background: #ffff00;
+        }
+
+        #div5{
+            background: #00ff00;
+        }
+
+    </style>
+    <!-- 外部样式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--<div id="div1" class="div1" style="background: #0000ff;">div</div>-->
+
+    <!--<div id="div2">
+        <div class="aa">div2</div>
+    </div>-->
+
+    <!--<div class="a">
+        <div class="b">
+            <div class="c">
+                <div class="d">
+                    <div class="e">
+                        <div class="f">
+                            <div class="g">
+                                <div class="h">
+                                    <div class="i">
+                                        <div class="j">
+                                            <div id="div3">div</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div class="bb aa">div</div>
+    <div>div</div>
+
+    <div id="div5">div5</div>
+
+</body>
+</html>
+
+<!--
+权重值
+id:100
+class:10
+tag:1
+
+!important > 内联 > ID > class > tag
+
+-->
