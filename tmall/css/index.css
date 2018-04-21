@@ -1,0 +1,30 @@
+#header{
+    height: 32px;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    line-height: 32px;
+    color: #999;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+
+#login-info{
+    width: 218px;
+    height: 100%;
+    float: left;
+}
+
+#quick-menu{
+    width: 530px;
+    height: 100%;
+    float: right;
+}
+#login-info a{
+    color: #999;
+}
+#login-info a:hover{
+    color: #f00;
+}
+
+#quick-menu .icon-gouwuche{
+    color: #f00;
+}
