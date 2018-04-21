@@ -50,6 +50,10 @@
         #baidu:hover{
             background: #ff0000;
         }
+
+        input[name^=user]{
+            background: #ff0000;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +89,11 @@
 
     <div id="div4"></div>
     <a href="http://www.baidu.com" id="baidu">百度</a>
+
+
+    用户名<input type="text" name="username">
+    密码<input type="password" name="password">
+    年龄<input type="number">
 </body>
 </html>
 <!--
@@ -100,5 +109,6 @@ css选择器：
 7、多类选择器  div.aa.bb{}
 8、伪类选择器  a:hover{}
 9、兄弟选择器  ~  +
+10、属性选择器  input[type="password"]
 
 -->
