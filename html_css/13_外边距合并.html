@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+            /*padding-top: 100px;*/
+            /*overflow: hidden;*/
+            /*float: left;*/
+            /*position: absolute;*/
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            margin-top: 100px;
+        }
+
+        #div3, #div4{
+            width: 200px;
+            height: 200px;
+        }
+        #div3{
+            background: #ff0000;
+            margin-bottom: 100px;
+        }
+        #div4{
+            background: #00ff00;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="div1">-->
+    <!--<div id="div2"></div>-->
+<!--</div>-->
+
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>
+<!--
+BFC:Block Formatting Contexts (块级格式化上下文)
+只要元素满足下面任一条件即可触发 BFC 特性：
+
+body 根元素
+浮动元素：float 除 none 以外的值
+绝对定位元素：position (absolute、fixed)
+display 为 inline-block、table-cells、flex
+overflow 除了 visible 以外的值 (hidden、auto、scroll)
+
+
+-->

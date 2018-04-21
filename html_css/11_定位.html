@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            height: 2000px;
+        }
+        /*div{
+            width: 200px;
+            height: 200px;
+        }
+        #div1{
+            background: #ff0000;
+        }
+        #div2{
+            background: #00ff00;
+            position: absolute;
+            top: 50px;
+            left:  50px;
+        }
+        #div3{
+            background: #ffff00;
+        }
+
+        #div4{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }*/
+
+        #div6{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+        }
+
+        #div7{
+            height: 50px;
+            background: #ff5d00;
+            margin-top: 100px;
+            position: sticky;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="div1">div1</div>-->
+    <!--<div id="div2">div2</div>-->
+    <!--<div id="div3">div3</div>-->
+
+
+    <!--<div id="div4">-->
+        <!--<div id="div5"></div>-->
+    <!--</div>-->
+
+    <!--<div id="div6">回到顶部</div>-->
+    <div id="div7"></div>
+</body>
+</html>
+
+<!--
+position
+static：默认值
+relative相对定位：相对于自己的初始位置，不脱离文档流
+absolute绝对定位：相对于离他最近的已经定位的祖先元素，脱离文档流
+fixed固定定位：相对于窗口，脱离文档流，有兼容性
+sticky粘性定位：粘性定位是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。
+    须指定 top, right, bottom 或 left 四个阈值其中之一，
+    才可使粘性定位生效。否则其行为与相对定位相同。有兼容性
+
+-->
