@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed;
+            margin: 100px auto;
+        }
+
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+            /* 变形 */
+            /*-webkit-transform: rotate(30deg);*/
+            /*-moz-transform: rotate(30deg);*/
+            /*-ms-transform: rotate(30deg);*/
+            /*-o-transform: rotate(30deg);*/
+            /*transform: rotate(-30deg);*/
+
+            /* 变形原点 */
+            /*-webkit-transform-origin: 0 0;*/
+            /*-moz-transform-origin: 0 0;*/
+            /*-ms-transform-origin: 0 0;*/
+            /*-o-transform-origin: 0 0;*/
+            /*transform-origin: 100px 0;*/
+
+            /* 过渡 */
+            /*-webkit-transition: transform 1s linear;*/
+            /*-moz-transition: transform 1s linear;*/
+            /*-ms-transition: transform 1s linear;*/
+            /*-o-transition: transform 1s linear;*/
+            transition: all 1s linear;
+        }
+
+        #div2:hover{
+            transform: rotate(-30deg);
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">div</div>
+    </div>
+</body>
+</html>

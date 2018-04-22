@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1::before{
+            content: 'xx';
+            background: #ff0000;
+            display: block;
+        }
+
+        #div2{
+            width: 150px;
+            border: 1px solid;
+        }
+
+        #div2::first-line{
+            background: #ff0000;
+        }
+
+        #div2::first-letter{
+            background: #00ff00;
+        }
+
+        #div2::selection{
+            background: orange;
+        }
+
+        input::-webkit-input-placeholder {
+            color: green;
+        }
+
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+            -wekkit-border-radius: 100px;   /* chrome safiri */
+            -o-border-radius: 100px;       /* opera */
+            -ms-border-radius: 100px;      /* IE */
+            -moz-border-radius: 100px;     /* firefox */
+            border-radius: 100px;          /* 标准 */
+        }
+        </style>
+</head>
+<body>
+    <div id="div1">
+        div
+    </div>
+    <div id="div2">
+        <!--asdfa sfs afas fsafas fsafasd fasdfs afsadfsa fsafa sddfa sdfsad -->
+        阿斯顿发顺丰的安防阿什顿发阿什顿发安防阿什顿发安防阿什顿发阿什顿发阿什顿发阿什顿发按时发放
+    </div>
+
+    用户名<input type="text" placeholder="请输入用户名">
+
+    <div id="div3"></div>
+</body>
+</html>

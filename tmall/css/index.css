@@ -5,6 +5,7 @@
     line-height: 32px;
     color: #999;
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 #login-info{
@@ -18,7 +19,7 @@
     height: 100%;
     float: right;
 }
-#login-info a{
+#header a{
     color: #999;
 }
 #login-info a:hover{
@@ -27,4 +28,91 @@
 
 #quick-menu .icon-gouwuche{
     color: #f00;
+    font-size: 12px;
 }
+
+#login-info .login{
+    margin: 0 10px;
+}
+
+#quick-menu .menu{
+    float: left;
+    padding: 0 14px;
+    cursor: pointer;
+}
+#quick-menu .menu-hd{
+    position: relative;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: transparent;
+
+
+
+}
+
+#quick-menu .menu-hd:hover{
+    background: #ffffff;
+    border-color: transparent #f2f2f2 transparent #f2f2f2;
+}
+
+#quick-menu .menu-hd:hover > a{
+    color: #f00;
+}
+
+#quick-menu .menu-hd a:hover{
+    text-decoration: underline;
+    color: #f00;
+}
+
+#quick-menu .triangle{
+    position: relative;
+}
+
+#quick-menu .triangle::after{
+    content: '';
+    width: 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #bbb transparent transparent transparent;
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    transform-origin: 3px 1.5px;
+    transition: none;
+
+}
+
+#quick-menu .menu:hover::after{
+    transform: rotate(180deg);
+    transition: transform .3s ease;
+}
+
+#quick-menu .submenu {
+    width: 74px;
+    position: absolute;
+    left: -1px;
+    bottom: -65px;
+    border: 1px solid #eee;
+    border-top-width: 0;
+    padding: 0 14px;
+    z-index: 1;
+    background-color: #ffffff;
+    display: none;
+}
+
+#quick-menu .menu:hover .submenu {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
