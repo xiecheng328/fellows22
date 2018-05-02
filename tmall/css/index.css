@@ -1,74 +1,82 @@
-#header{
+#header {
     height: 32px;
     background-color: #f2f2f2;
     font-size: 12px;
     line-height: 32px;
     color: #999;
-    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
     border-bottom: 1px solid #e5e5e5;
 }
 
-#login-info{
+#login-info {
     width: 218px;
     height: 100%;
     float: left;
 }
 
-#quick-menu{
+#quick-menu {
     width: 530px;
     height: 100%;
     float: right;
 }
-#header a{
+
+#header a {
     color: #999;
 }
-#login-info a:hover{
+
+#login-info a:hover {
     color: #f00;
 }
 
-#quick-menu .icon-gouwuche{
+#quick-menu .icon-gouwuche {
     color: #f00;
     font-size: 12px;
 }
 
-#login-info .login{
+#login-info .login {
     margin: 0 10px;
 }
 
-#quick-menu .menu{
+#quick-menu .menu {
     float: left;
     padding: 0 14px;
     cursor: pointer;
 }
-#quick-menu .menu-hd{
+
+#quick-menu .menu-hd {
     position: relative;
     border-width: 0 1px 0 1px;
     border-style: solid;
     border-color: transparent;
 
-
-
 }
 
-#quick-menu .menu-hd:hover{
+#quick-menu .menu-hd:hover {
     background: #ffffff;
     border-color: transparent #f2f2f2 transparent #f2f2f2;
 }
 
-#quick-menu .menu-hd:hover > a{
+#quick-menu .menu-hd:hover > a {
     color: #f00;
 }
 
-#quick-menu .menu-hd a:hover{
+#quick-menu .menu-hd a:hover {
     text-decoration: underline;
     color: #f00;
 }
 
-#quick-menu .triangle{
+#quick-menu .triangle {
     position: relative;
+
 }
 
-#quick-menu .triangle::after{
+#quick-menu .triangle:hover {
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: transparent #eee #fff #eee;
+}
+
+#quick-menu .triangle::after {
     content: '';
     width: 0;
     border-style: solid;
@@ -82,7 +90,7 @@
 
 }
 
-#quick-menu .menu:hover::after{
+#quick-menu .menu:hover::after {
     transform: rotate(180deg);
     transition: transform .3s ease;
 }
@@ -91,7 +99,7 @@
     width: 74px;
     position: absolute;
     left: -1px;
-    bottom: -65px;
+    bottom: -66px;
     border: 1px solid #eee;
     border-top-width: 0;
     padding: 0 14px;
@@ -104,9 +112,160 @@
     display: block;
 }
 
+#search .logo {
+    width: 240px;
+}
 
+#search .search-content {
+    width: 628px;
+    height: 76px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -38px;
+    margin-left: -314px;
+}
 
+#search .search-input {
+    border: 2px solid #ff0036;
+    height: 36px;
+}
 
+#search .search-input input[type="text"] {
+    width: 491px;
+    height: 36px;
+    outline: 0;
+    border: 0;
+    float: left;
+    text-indent: 10px;
+    font-size: 16px;
+}
+
+#search .search-input button {
+    width: 132px;
+    height: 36px;
+    border: 0;
+    background-color: #ff0036;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+}
+
+#search .wrapper {
+    position: relative;
+}
+
+#search .hot-query {
+    margin-top: 10px;
+}
+
+#search .hot-query li {
+    float: left;
+    border-right: 1px solid #999;
+    padding: 0 12px;
+}
+
+#search .hot-query a {
+    color: #999;
+}
+
+#search .hot-query-highlight a {
+    color: #ff0036;
+}
+
+#search li.last {
+    border-right: 0;
+}
+
+#menu li {
+    float: left;
+    margin-right: 10px;
+}
+
+#menu img {
+    width: 100px;
+    margin-top: 3px;
+}
+
+#menu .main-nav {
+    height: 36px;
+    line-height: 36px;
+    margin-left: 200px;
+}
+
+#menu a {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#menu a:hover {
+    color: #ff0036;
+}
+
+#banner {
+    background-color: #2e0269;
+    height: 521px;
+}
+
+#banner .wrapper {
+    position: relative;
+}
+
+#banner .banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#banner .banner-img img {
+    width: 1230px;
+    height: 521px;
+}
+
+#category {
+    position: absolute;
+    left: 0;
+    top: -36px;
+    background-color: rgba(0, 0, 0, .55);
+}
+
+#category li {
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+#category li:hover{
+    background-color: #fff;
+}
+
+#category li:hover a{
+    color: #ff0036;
+}
+
+#category li:hover .icon-fenlei{
+    color: #ff0036;
+}
+
+#category li a {
+    color: #fff;
+}
+
+#category .icon-fenlei {
+    color: #fff;
+    font-weight: 700;
+}
+
+#category .category-type {
+    background-color: #ff0036;
+}
+
+#category a {
+    margin-left: 10px;
+}
 
 
 
