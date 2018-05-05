@@ -235,18 +235,22 @@
     width: 200px;
     height: 36px;
     line-height: 36px;
-    cursor: pointer;
 }
 
-#category li:hover{
+#category li.type{
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#category li.type:hover{
     background-color: #fff;
 }
 
-#category li:hover a{
+#category li.type:hover a{
     color: #ff0036;
 }
 
-#category li:hover .icon-fenlei{
+#category li.type:hover .icon-fenlei{
     color: #ff0036;
 }
 
