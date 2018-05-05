@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 50px;
+            border: 20px solid #000;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div</div>
+</body>
+</html>
+
+<!--
+盒模型：
+W3C标准盒模型：宽度 = 内容的宽度
+怪异盒模型(混杂模式)：宽度 = 内容 + padding + border
+
+标准盒模型 -> 怪异盒模型：box-sizing: border-box;
+-->

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            border: 1px solid #f00;
+
+            /*height: 30px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+
+        }
+
+        li{
+            list-style: none;
+            float: left;
+        }
+
+        .last{
+            clear: both;
+        }
+
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <ul class="clearfix">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+        <!--<div class="last"></div>-->
+    </ul>
+</body>
+</html>
