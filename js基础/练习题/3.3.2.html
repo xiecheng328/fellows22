@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+如果某年的年份值是4的倍数并且不是100的倍数，
+或者该年份值是400的倍数，那么这一年就是闰年。
+请编制一个页面，该页面显示当天是否处于闰年。
+
+-->
+
+<script>
+    function getLeapYear(year) {
+        if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    var today = new Date();
+    var year = today.getFullYear();
+
+    document.write('现在是' + year + '年' + (getLeapYear(year) ? '是闰年' : '不是闰年'));
+
+
+</script>
+</body>
+</html>
