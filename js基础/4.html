@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="javascript:alert('JS!');">aaaaa</a>
+<a href="mailto:13136666328@163.com">邮件</a>
+
+<script>
+    /*var a = 5;
+    var b = a;
+    a = 6;
+    console.log(b);*/
+
+    var obj1 = {
+        name: 'zhangsan',
+        age: 18,
+        dad: {
+            name: 'zhanger',
+            age: 40
+        }
+    };
+    /*var obj2 = obj1; // 浅拷贝
+    obj1.name = 'lisi';
+    obj1.age = 20;
+    console.log(obj2);*/
+
+
+    // 深拷贝
+    /*var obj2 = new Object();
+    obj2.name = obj1.name;
+    obj2.age = obj1.age;
+
+    obj1.name = 'lisi';
+    console.log(obj2);*/
+
+    // 深拷贝
+    function clone(obj){
+        var newObj = {};
+        for(var p in obj){
+            if(typeof obj[p] == 'object'){
+                newObj[p] = clone(obj[p]); // 递归
+            }else{
+                newObj[p] = obj[p];
+            }
+        }
+        return newObj;
+    }
+
+    var cloneObj = clone(obj1);
+    obj1.dad.age = 41;
+
+    console.log(cloneObj);
+
+
+    var iNum = 5; // int
+    var sUserName = 'zs';
+    var fNum = 0.5;
+    var bFlag = true;
+    var aSchool = ['农大', '黑大'];
+    var oPerson = {
+
+    };
+
+
+    (function(){
+        console.log(123);
+    })(); // 函数立即调用 匿名函数
+
+
+
+    (function(){
+        var a = 5;
+
+
+
+    })();
+
+
+
+
+</script>
+</body>
+</html>
