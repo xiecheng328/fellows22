@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var arr1 = [1, 2, 3, 4];
+    for(var i=0; i<arr1.length; i++){
+        console.log(arr1[i]);
+    }*/
+
+    // var arr2 = new Array(5, 6, 7, 8);
+    /* for(var i=0; i<arr2.length; i++){
+         console.log(arr2[i]);
+     }*/
+    // console.log(arr2);
+
+    /*var arr3 = new Array('a');
+    console.log(arr3[100]);*/
+
+    /*var arr = ['a', 'b', 'c'];
+    var res = arr.push('d');
+    console.log(arr);
+    console.log(res);
+
+    arr.pop();
+    console.log(arr);
+    console.log(arr.join());*/
+
+    /*var str = 'abcdefg';
+    console.log(str.split('').reverse().join(''));*/
+
+    /*var arr = ['a', 'b', 'c'];
+    var obj = {};
+    // console.log(typeof arr);
+    // console.log(typeof obj);
+    // 判断是否为数组
+    console.log(arr instanceof Array);
+    console.log(arr.constructor == Array);*/
+
+    // js 基于面向对象
+    var obj1 = {
+        name: 'zhangsan',
+        age: 18,
+        coding: function(){
+            console.log('coding');
+        }
+    };
+
+    console.log(obj1.name);
+    obj1.coding();
+
+
+    var obj2 = new Object();
+    obj2.name = 'lisi';
+    obj2.age = 20;
+    obj2.eat = function(){
+
+    };
+
+    console.log(obj2['name']);
+
+
+    function fn(p){
+        console.log(p.name);
+        console.log(p.school);
+        console.log(p.sex);
+        console.log(p.weight);
+    }
+
+    fn({
+        sex: '男',
+        name: 'zs',
+        age: '30',
+        school: 'weichuang',
+        height: 180,
+        weight: 140
+    });
+
+    var person = {
+        sex: '男',
+        name: 'zs',
+        age: '30',
+        school: 'weichuang',
+        height: 180,
+        weight: 140
+    };
+    // key -- value
+
+    for(var p in person){
+        console.log(p + ':' + person[p]);
+    }
+
+</script>
+</body>
+</html>
