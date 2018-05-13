@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+
+10! = 10 * 9!
+9! = 9 * 8!
+8! = 8 * 7!
+
+n! = n * (n-1)!
+
+-->
+
+<script>
+    // 'use strict';
+    function factorial1(n) {
+        if (n == 1) {
+            return 1;
+        }
+        return n * arguments.callee(n - 1); // arguments.callee()调用函数本身,严格模式下不支持
+    }
+
+    function factorial2(n) {
+        var result = 1;
+        for (var i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    console.log(factorial1(10));
+    console.log(factorial2(10));
+
+
+    //编写程序，计算 1!+2!+3!+…..＋10！的结果。
+    var sum = 0; // 结果
+    for(var i=1; i<=10; i++){
+        sum += factorial1(i);
+    }
+    console.log(sum);
+
+
+</script>
+</body>
+</html>
