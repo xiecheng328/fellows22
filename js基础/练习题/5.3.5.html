@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    function fn(n){
+//
+//        var a1 = 1,a2 = 1,temp;
+//        for(var i=3;i<=n;i++){
+//
+//            temp = a1 + a2;//2
+//            a1 = a2 ;//1 ,2;
+//            a2 = temp;//2,3
+//        }
+//        return temp;
+//    }
+//
+//    console.log(fn(5));
+    // 1 1 2 3 5
+
+    function fn2(n){
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        return fn2(n-1)+fn2(n-2);
+    }
+    console.log(fn2(6));
+
+
+
+
+
+</script>
+</body>
+</html>

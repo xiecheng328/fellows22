@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    
+    function CollectDigits(s) {
+//        var str = "";
+        var arr = [];
+//        indexOf();
+        for(var i=0;i<s.length;i++){
+            if(s.charAt(i) >=0 && s.charAt(i)<=9){
+                arr.push(s.charAt(i));
+            }
+        }
+//        return str;
+        return arr.join("");
+    }
+    console.log(CollectDigits("1k3j4h57d9"));
+    
+</script>
+</body>
+</html>
