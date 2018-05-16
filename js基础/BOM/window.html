@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+             height: 2000px;
+         }
+        #div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div">
+
+    </div>
+    <!--<label>用户名：</label>-->
+
+    <input type="text" id="ipt">
+    <a href="history.html">下一步</a>
+    <script>
+//        moveBy(200,300);
+
+//scrollTo(0,300);
+
+//        var oIpt = document.getElementById('ipt');
+//        oIpt.focus();
+
+//        var temp = confirm("确定删除？");
+//
+//        if(temp){
+//            ...
+//        };
+//定时器
+
+//    var timer = setTimeout(function(){
+//        console.log(11111);
+//    },0);
+//
+//    console.log(22222);
+
+//    异步
+//        var i = 0;
+//        var timer = setInterval(function(){
+//           console.log(i++);
+//            if(i==5){
+//                clearInterval(timer);
+//            }
+//        },500);
+//
+
+//        if(navigator.userAgent.indexOf('iphone') > -1){
+//            location.href = "http://www.m.taobao.com";
+//        }else{
+//            location.href = "http://www.taobao.com";
+//        }
+
+        var i=0;
+        function fn(flag){
+            if(flag){
+                var timer = setTimeout(function(){
+                    console.log(i++);
+                    if(i==5){
+                        fn(false);
+                    }else{
+                        fn(true);
+                    }
+                },1000);
+            }else{
+                clearTimeout(timer);
+            }
+        }
+        fn(true);
+
+//
+//        var i=0;
+//        function fn(){
+//            setTimeout(function(){
+//                console.log(i++);
+//                if(i<5){
+//                    fn();
+//                }
+//
+//            },1000);
+//        }
+//        fn();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
