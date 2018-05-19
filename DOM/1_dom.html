@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <div id="div1">div</div>
+    <div id="div1">div123</div>
     <!--<div id="div1">div</div>-->
 
 
@@ -62,8 +62,11 @@
             };*/
         // };
 
-        /*var oDiv1 = document.getElementById('div1');
-        // console.log(oDiv1);
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(){
+            console.log(oDiv1.innerHTML);
+        };
+        /*// console.log(oDiv1);
 
 
         var oNav1 = document.getElementById('nav1');

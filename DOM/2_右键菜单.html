@@ -14,6 +14,9 @@
             border: 1px solid #000;
             width: 120px;
             display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         #menu li{
@@ -49,13 +52,31 @@
 
     <script>
         var oMenu = document.getElementById('menu');
-        document.oncontextmenu = function(){
+        var aLi = oMenu.getElementsByTagName('li');// HTMLCollection
+
+        document.oncontextmenu = function(e){
+            e = e || window.event; // 解决兼容性
             oMenu.style.display = 'block';
+            oMenu.style.left = e.clientX + 'px';
+            oMenu.style.top = e.clientY + 'px';
 
-
-
-            return false;//  阻止默认行为,阻止浏览器默认菜单
+            return false; // 阻止默认行为,阻止浏览器默认菜单
         };
+
+        document.onclick = function(e){
+            e = e || window.event;
+            if(e.button == 0){
+                oMenu.style.display = 'none';
+            }
+        };
+
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                // this 对于当前对象的引用
+                alert(this.innerHTML);
+            };
+        }
 
 
 
