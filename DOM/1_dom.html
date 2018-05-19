@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       /* window.onload = function(){
+            var oDiv1 = document.getElementById('div1');
+            console.log(oDiv1);
+        };*/
+
+
+
+    </script>
+    <style>
+        /*#div1{
+            background: #ff0000;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="div1">div</div>
+    <!--<div id="div1">div</div>-->
+
+
+    <img src="pic.jpg" alt="" id="pic">
+
+
+    <ul id="nav1">
+        <li>001</li>
+        <!--<li>002</li>-->
+        <!--<li>003</li>-->
+        <!--<li>004</li>-->
+    </ul>
+
+    <ul id="nav2">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+
+    <form action="">
+        用户名：<input type="text" name="username">
+        密码： <input type="password" name="pwd">
+    </form>
+
+
+    <div class="aa">divdiv</div>
+
+
+    <!--<script src="xx.js"></script>-->
+
+    <script>
+        // window.onload = function(){
+           /* var oImg = document.getElementById('pic');
+            oImg.onload = function(){
+                console.log(oImg.offsetWidth);
+            };*/
+        // };
+
+        var oDiv1 = document.getElementById('div1');
+        // console.log(oDiv1);
+
+
+        var oNav1 = document.getElementById('nav1');
+        // HTMLCollection 伪数组  类数组
+        // var aLi = document.getElementsByTagName('li');
+        var aLi = oNav1.getElementsByTagName('li');
+
+        // console.log(aLi);
+
+        // NodeList
+        var oUsername = document.getElementsByName('username');
+        oUsername[0].style.background = '#f00';
+        // console.log(oUsername);
+
+        //HTMLCollection
+        var aDiv = document.getElementsByClassName('aa');// 有兼容性
+        // console.log(aDiv);
+        aDiv[0].style.background = '#f00';
+
+
+        console.log(document.body); // body
+        console.log(document.documentElement); // html
+    </script>
+</body>
+</html>
+
+<!--
+事件event
+
+-->
