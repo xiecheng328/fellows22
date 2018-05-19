@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右键菜单</title>
+    <style>
+        /* css reset */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu{
+            border: 1px solid #000;
+            width: 120px;
+            display: none;
+        }
+
+        #menu li{
+            list-style: none;
+            width: 120px;
+            height: 30px;
+            border-bottom: 1px dashed #ccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        #menu li:hover{
+            background: #ccc;
+        }
+
+        #menu .last{
+            border-bottom: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="menu">
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+        <li>菜单4</li>
+        <li class="last">菜单5</li>
+    </ul>
+
+
+
+    <script>
+        var oMenu = document.getElementById('menu');
+        document.oncontextmenu = function(){
+            oMenu.style.display = 'block';
+
+
+
+            return false;//  阻止默认行为,阻止浏览器默认菜单
+        };
+
+
+
+    </script>
+</body>
+</html>
+
+<!--
+     事件:事件源 事件处理函数 事件对象e
+
+-->

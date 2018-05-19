@@ -49,6 +49,8 @@
 
     <div class="aa">divdiv</div>
 
+    <a href="http://www.baidu.com" id="bd">百度一下</a>
+
 
     <!--<script src="xx.js"></script>-->
 
@@ -60,7 +62,7 @@
             };*/
         // };
 
-        var oDiv1 = document.getElementById('div1');
+        /*var oDiv1 = document.getElementById('div1');
         // console.log(oDiv1);
 
 
@@ -84,6 +86,16 @@
 
         console.log(document.body); // body
         console.log(document.documentElement); // html
+
+        */
+
+        var oBd = document.getElementById('bd');
+        oBd.onclick = function(){
+            console.log(123);
+
+            return false;
+        };
+
     </script>
 </body>
 </html>
