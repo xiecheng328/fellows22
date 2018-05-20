@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+
+        #container{
+            width: 400px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+        }
+
+        #nav{
+            height: 30px;
+            border-bottom: 1px solid;
+        }
+
+        #nav li{
+            width: 120px;
+            height: 30px;
+            background: #cccccc;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        #nav .selected{
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        #content div{
+            display: none;
+        }
+
+        #content .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="nav">
+            <li class="selected">html</li>
+            <li>css</li>
+            <li>javascript</li>
+        </ul>
+        <div id="content">
+            <div class="selected">001</div>
+            <div>002</div>
+            <div>003</div>
+        </div>
+    </div>
+
+    <script>
+        var oNav = document.getElementById('nav');
+        var aLi = oNav.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;// 给每个li对象自定义属性index，保存住循环时候i的值
+            /*
+                相当于
+                aLi[0].index = 0;
+                aLi[1].index = 1;
+                aLi[2].index = 2;
+            */
+            aLi[i].onclick = function(){
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].className = '';
+                    aDiv[i].className = '';
+                }
+                this.className = 'selected';
+
+                aDiv[this.index].className = 'selected';
+            };
+        }
+
+
+    </script>
+
+</body>
+</html>
