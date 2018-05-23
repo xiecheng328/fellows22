@@ -68,15 +68,32 @@
     <script>
 
         var oUl = document.getElementById('ul1');
+        var oLeft = document.getElementById('left');
+        var oRight = document.getElementById('right');
+        var speed = -5;
         oUl.innerHTML += oUl.innerHTML;
         oUl.style.width = oUl.offsetWidth*2 + 'px';
 
         setInterval(function(){
-            oUl.style.left = oUl.offsetLeft - 2 + 'px';
+            oUl.style.left = oUl.offsetLeft + speed + 'px';
             if(oUl.offsetLeft <= -oUl.offsetWidth/2){
                 oUl.style.left = 0;
             }
+            if(oUl.offsetLeft>0){
+                oUl.style.left = -oUl.offsetWidth/2+'px';
+            }
         },50)
+
+        oLeft.onmouseover = oRight.onmouseover = function(){
+            if(oLeft == this){
+                speed = -5;
+            }else{
+                speed = 5;
+            }
+        }
+
+
+
 
 //        console.log(oUl.innerHTML);
 
