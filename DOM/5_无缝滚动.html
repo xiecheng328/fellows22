@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 320px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #ul1{
+            width: 440px;
+            position: absolute;
+        }
+        #ul1 li{
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color:#fff;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            margin-right: 10px;
+        }
+        #div1{
+            position: absolute;
+            left:50%;
+            margin-left: -60px;
+            bottom:30px;
+        }
+        #div1 span{
+            background: #ccc;
+            padding: 10px;
+            display: block;
+            width: 40px;
+            float: left;
+        }
+        #left{
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="div1">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+    <script>
+
+        var oUl = document.getElementById('ul1');
+        oUl.innerHTML += oUl.innerHTML;
+        oUl.style.width = oUl.offsetWidth*2 + 'px';
+
+        setInterval(function(){
+            oUl.style.left = oUl.offsetLeft - 2 + 'px';
+            if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+                oUl.style.left = 0;
+            }
+        },50)
+
+//        console.log(oUl.innerHTML);
+
+    </script>
+</body>
+</html>
