@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            /*position: relative;*/
+            /*top: 100px;*/
+            /*left: 100px;*/
+        }
+
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+
+
+        // console.log(oDiv1.style.width);
+        // oDiv1.style.width = 500 + 'px';
+
+
+        /*console.log(oDiv1.offsetWidth);
+        console.log(oDiv1.offsetHeight);
+
+        console.log(getStyle(oDiv1, 'background'));
+*/
+
+        // 获取样式
+        function getStyle(elem, attr){
+            if(elem.currentStyle){//IE
+                return elem.currentStyle[attr];
+            }else{
+                return getComputedStyle(elem, false)[attr];
+            }
+        }
+
+
+        console.log(oDiv2.offsetLeft);
+        console.log(oDiv2.offsetTop);
+        console.log(oDiv2.offsetParent);
+
+    </script>
+</body>
+</html>

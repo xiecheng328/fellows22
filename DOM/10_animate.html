@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="start">开始</button>
+    <div id="box"></div>
+
+
+<script src="jslib.js"></script>
+    <script>
+        var oStart = document.getElementById('start');
+        var oBox = document.getElementById('box');
+        oStart.onclick = function(){
+            animate(oBox, {
+                width: 500
+            }, function(){
+                animate(oBox, {
+                    height: 500
+                })
+            });
+        };
+
+
+
+    </script>
+
+<script>
+
+
+
+
+</script>
+</body>
+</html>

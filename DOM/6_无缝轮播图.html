@@ -20,13 +20,14 @@
             margin: 100px auto;
             overflow: hidden;
         }
-        #imgs{
-            width: 2600px;
+
+        #imgs {
+            width: 2080px;
             position: absolute;
         }
 
         #imgs img {
-           float: left;
+            float: left;
         }
 
         #nav {
@@ -65,7 +66,6 @@
         <img src="img/2.jpg" alt="">
         <img src="img/3.jpg" alt="">
         <img src="img/4.jpg" alt="">
-        <img src="img/1.jpg" alt="">
     </div>
     <ul id="nav">
         <li class="selected">1</li>
@@ -81,7 +81,7 @@
 <script src="jslib.js"></script>
 <script>
 
-    (function(){
+    (function () {
         var oNav = document.getElementById('nav');
         var aLi = oNav.getElementsByTagName('li');
         var oImgs = document.getElementById('imgs');
@@ -91,6 +91,9 @@
         var oContainer = document.getElementById('container');
         var iNowIndex = 0; // 定义全局变量，保存当前选中图片对应的索引值,初始值0
         var timer;
+
+        oImgs.appendChild(aImg[0].cloneNode());
+        oImgs.style.width = aImg[0].offsetWidth * aImg.length + 'px';
 
         for (var i = 0; i < aLi.length; i++) {
             aLi[i].index = i;
@@ -103,55 +106,50 @@
         oPrev.onclick = oNext.onclick = function () {
             if (this === oPrev) {
                 iNowIndex--;
-                if(iNowIndex == -1){
+                if (iNowIndex == -1) {
                     iNowIndex = aLi.length - 1;
+                    oImgs.style.left = -aImg[0].offsetWidth * aLi.length + 'px';
                 }
             } else {
                 iNowIndex++;
-                if(iNowIndex == aLi.length+1){
-                    iNowIndex = 0;
+                if (iNowIndex == aLi.length + 1) {
+                    iNowIndex = 1;
+                    oImgs.style.left = 0;
                 }
             }
             changeImg();
         };
 
-        oPrev.onselectstart = oNext.onselectstart = function(){
+        oPrev.onselectstart = oNext.onselectstart = function () {
             return false;//阻止默认行为
         };
 
-        oContainer.onmouseover = function(){
+        oContainer.onmouseover = function () {
             clearInterval(timer);
         };
-        oContainer.onmouseout = function(){
+        oContainer.onmouseout = function () {
             play();
         };
 
         play();
 
-        function play(){
-            timer = setInterval(function(){
+        function play() {
+            timer = setInterval(function () {
                 oNext.onclick();
             }, 1000);
         }
 
-        function changeImg(){
-            for(var i=0; i<aLi.length; i++){
+        function changeImg() {
+            for (var i = 0; i < aLi.length; i++) {
                 aLi[i].className = '';
             }
-            if(iNowIndex == 4){
+            if (iNowIndex == 4) {
                 aLi[0].className = 'selected';
-            }else{
+            } else {
                 aLi[iNowIndex].className = 'selected';
             }
 
-            animate(oImgs,{left:-iNowIndex*aImg[0].offsetWidth},function(){
-//                console.log(111);
-                if(iNowIndex == 4){
-                    oImgs.style.left = 0;
-                    iNowIndex = 0;
-                }
-
-            })
+            animate(oImgs, {left: -iNowIndex * aImg[0].offsetWidth});
         }
 
     })();
