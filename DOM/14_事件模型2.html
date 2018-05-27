@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li class="aa">001</li>
+        <li class="aa">002</li>
+        <li class="bb">003</li>
+        <li class="aa">004</li>
+        <li class="bb">005</li>
+    </ul>
+
+    <script>
+        var oUl1 = document.getElementById('ul1');
+        var aLi = oUl1.getElementsByTagName('li');
+        /*for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(this.innerHTML);
+            };
+        }*/
+
+        oUl1.onclick = function(e){
+            // console.log(e.target); // 事件源
+            var target = null;
+            if(e){
+                target = e.target;
+            }else{
+                target = window.event.srcElement;
+            }
+            console.log(target.className);
+        };
+
+
+
+    </script>
+
+</body>
+</html>

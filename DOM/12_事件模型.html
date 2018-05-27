@@ -121,7 +121,7 @@
     });*/
 
     var fn1 = function(){
-        alert(1);
+        console.log(this.id);
     };// new Function()
     var fn2 = function(){
         alert(2);
@@ -140,9 +140,12 @@
         if(elem.addEventListener){
             elem.addEventListener(type, handler, useCapture == undefined ? false : true);
         }else if(elem.attachEvent){
-            elem.attachEvent('on' + type, handler);
+            elem.xx = function(){
+                handler.call(elem);
+            };
+            elem.attachEvent('on' + type, elem.xx);
         }else{
-            elem['on' + type] = function(){};
+            elem['on' + type] = handler;
         }
     }
 
@@ -151,11 +154,10 @@
         if(elem.removeEventListener){
             elem.removeEventListener(type, handler);
         }else if(elem.detachEvent){
-            elem.detachEvent('on' + type, handler);
+            elem.detachEvent('on' + type, elem.xx);
         }else{
             elem['on' + type] = null;
         }
-
     }
 
 
@@ -187,4 +189,5 @@ elem.attachEvent('onclick', fn);
 attachEvent 顺序是相反的  this->window
 
 
+事件委托、事件代理
 -->
