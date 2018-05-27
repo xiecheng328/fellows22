@@ -5,14 +5,93 @@
     <title>Title</title>
 </head>
 <body>
+<div id="div1">
+    <div id="div2">div2</div>
+    <!-- 这是一个注释 -->
+    <div id="div3">div3</div>
+</div>
+
+
+<div class="aa bb cc dd">div5</div>
+<div class="aa">div6</div>
 <script>
-    child.parentNode;
+    /* child.parentNode;
 
-    node.cloneNode();
+     node.cloneNode();
 
-    parent.appendChild(child);
+     parent.appendChild(child);*/
+
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    // console.log(oDiv1.nodeName);
+    // console.log(oDiv1.nodeType);
+    //  console.log(oDiv1.childNodes);
+    //  console.log(oDiv1.children);
+    //  var nodes = oDiv1.childNodes;
+    //  for(var i=0; i<nodes.length; i++){
+    //      console.log(nodes[i]);
+    //  }
+
+    // console.log(oDiv1.firstChild);
+    // console.log(oDiv1.firstElementChild);
+    //
+    // console.log(oDiv1.lastChild);
+    // console.log(oDiv1.lastElementChild);
+
+    // console.log(oDiv2.nextSibling);
 
 
+    console.log(next(oDiv3));
+
+    // 返回下一个兄弟元素节点
+    function next(elem) {
+        do {
+            elem = elem.nextSibling;
+        } while (elem && elem.nodeType != 1);
+        return elem;
+    }
+
+    console.log(first(oDiv1));
+
+    // 返回元素的第一个元素孩子
+    function first(elem) {
+        elem = elem.firstChild;
+        return elem && elem.nodeType == 1 ? elem : next(elem);
+    }
+
+
+    var oDiv4 = document.createElement('div');
+    oDiv4.innerHTML = 'div4';
+    oDiv1.insertBefore(oDiv4, oDiv3);
+
+    oDiv1.removeChild(oDiv2);
+
+    oDiv1.replaceChild(oDiv2, oDiv3);
+
+
+    // var aa = document.getElementsByClassName('aa');
+    // console.log(aa);
+
+    console.log(getByClass('aa'));
+
+    // 通过class获取元素集合
+    function getByClass(clsName) {
+        if (document.getElementsByClassName) {
+            return document.getElementsByClassName(clsName);
+        } else {
+            var elems = document.getElementsByTagName('*');
+            var result = [];
+            for (var i = 0; i < elems.length; i++) {
+                console.log(elems[i].className);
+                // 暂时还不完善，后面用正则表达式完善
+                if (elems[i].className == clsName) {
+                    result.push(elems[i]);
+                }
+            }
+            return result;
+        }
+    }
 
 </script>
 </body>
