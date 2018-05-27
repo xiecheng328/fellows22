@@ -138,7 +138,7 @@
     // 绑定事件
     function addEvent(elem, type, handler, useCapture){
         if(elem.addEventListener){
-            elem.addEventListener(type, handler, useCapture == undefined ? false : true);
+            elem.addEventListener(type, handler, (useCapture == undefined || useCapture == false) ? false : true);
         }else if(elem.attachEvent){
             elem.xx = function(){
                 handler.call(elem);
