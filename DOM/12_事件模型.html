@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+
+        #div2 {
+            width: 300px;
+            height: 300px;
+            background: #00ff00;
+        }
+
+        #div3 {
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+
+
+    </style>
+</head>
+<body id="body">
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
+
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    var oBody = document.getElementById('body');
+    var oHtml = document.getElementById('html');
+
+    /*oDiv1.onclick = function(){
+        console.log('div1');
+    };
+    oDiv2.onclick = function(){
+        console.log('div2');
+    };
+    oDiv3.onclick = function(){
+        console.log('div3');
+    };
+    oBody.onclick = function(){
+        console.log('body');
+    };
+    oHtml.onclick = function(){
+        console.log('html');
+    };*/
+
+
+    /* oDiv1.addEventListener('click', function(e){
+         console.log('div1 捕获');
+         e.stopPropagation();
+     }, true);
+     oDiv2.addEventListener('click', function(e){
+         console.log('div2 捕获');
+         e.stopPropagation();
+     }, true);
+     oDiv3.addEventListener('click', function(e){
+         console.log('div3 捕获');
+         e.stopPropagation();
+     }, true);
+
+     oDiv1.addEventListener('click', function(e){
+         console.log('div1 冒泡');
+         e.stopPropagation();
+     }, false);
+     oDiv2.addEventListener('click', function(e){
+         console.log('div2 冒泡');
+         e.stopPropagation();
+     }, false);
+     oDiv3.addEventListener('click', function(e){
+         console.log('div3 冒泡');
+         e.stopPropagation();
+     }, false);*/
+
+/*
+
+    oDiv1.attachEvent('onclick', function () {
+        console.log('div1');
+        window.event.cancelBubble = true;
+    });
+    oDiv2.attachEvent('onclick', function () {
+        console.log('div2');
+        window.event.cancelBubble = true;
+    });
+    oDiv3.attachEvent('onclick', function () {
+        console.log('div3');
+        window.event.cancelBubble = true;
+    });
+*/
+
+    /*oDiv1.onclick = function(){
+        console.log('div1');
+    };*/
+
+    /*oDiv1.onclick = function(){
+        console.log('div11');
+    };*/
+
+    /*oDiv1.addEventListener('click', function(){
+        console.log(this);
+    });*/
+   /* oDiv1.addEventListener('click', function(){
+        console.log('div111');
+    });*/
+
+    /*oDiv1.attachEvent('onclick', function(){
+        console.log(this);
+    });*/
+    /*oDiv1.attachEvent('onclick', function(){
+        console.log('2');
+    });*/
+
+    var fn1 = function(){
+        alert(1);
+    };// new Function()
+    var fn2 = function(){
+        alert(2);
+    };
+
+
+    addEvent(oDiv1, 'click', fn1);
+    // addEvent(oDiv2, 'click', fn2);
+
+    removeEvent(oDiv1, 'click', fn1);
+    // removeEvent(oDiv2, 'click', fn2);
+
+
+    // 绑定事件
+    function addEvent(elem, type, handler, useCapture){
+        if(elem.addEventListener){
+            elem.addEventListener(type, handler, useCapture == undefined ? false : true);
+        }else if(elem.attachEvent){
+            elem.attachEvent('on' + type, handler);
+        }else{
+            elem['on' + type] = function(){};
+        }
+    }
+
+    // 移除事件
+    function removeEvent(elem, type, handler){
+        if(elem.removeEventListener){
+            elem.removeEventListener(type, handler);
+        }else if(elem.detachEvent){
+            elem.detachEvent('on' + type, handler);
+        }else{
+            elem['on' + type] = null;
+        }
+
+    }
+
+
+
+    /*var obj = {
+        name: 'zs',
+        age: 18
+    };
+    for(var p in obj){
+        console.log(obj[p]);
+    }*/
+
+
+</script>
+</body>
+</html>
+<!--
+标准浏览器:
+elem.addEventListener(type, fn, false/true);
+false:事件冒泡  内 -> 外
+true:事件捕获   外 -> 内
+先捕获 后冒泡
+阻止事件传播:e.stopPropagation();
+
+
+早期IE:
+elem.attachEvent('onclick', fn);
+阻止事件冒泡：window.event.cancelBubble = true;
+attachEvent 顺序是相反的  this->window
+
+
+-->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+
+<script>
+
+    var obj = {
+        name: 'zs',
+        age: 18
+    };
+
+    function foo(a, b, c){
+        console.log(this, a ,b, c);
+    }
+    // foo.call(obj, 5, 6, 7);
+    // foo.apply(obj, [5, 6, 7]);
+
+    foo.bind(obj)( 5, 6, 7);
+
+    // 改变this
+    // call apply bind
+
+
+    var oUl1 = document.getElementById('ul1');
+    var aLi = oUl1.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            // var _this = this;
+            window.setTimeout(function(){
+                console.log(this);
+            }.bind(this), 1000);
+        };
+    }
+
+
+</script>
+</body>
+</html>
