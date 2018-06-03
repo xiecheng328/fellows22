@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            /*background: red;*/
+            height: 1000px;
+        }
+        #div2{
+            height: 100px;
+            width: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="div2">
+    <div id='div1' style="height: 500px;background: #ccc">
+
+    </div>
+</div>
+
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+//    console.log($('.aa').position());
+
+    $('#div2').on('click',function(){
+//        $('div').toggleClass('aa');
+        console.log($('#div1').scrollTop());
+    });
+//        $('div').css({
+//            background:'red',
+//            width:'100px',
+//            height:'100px'
+//        });
+//        console.log($('#div1').hasClass('aa'));
+
+
+
+//    $('div').html('<h1>hhhhhhh</h1>');
+//    console.log($('div').text());
+
+//    $('.ck1').removeAttr('class')
+
+//    $('.ck1').attr('checked','checked');
+//    $('.ck2').prop('checked','checked');
+
+
+
+
+//        var title = $('div').attr('title');
+//
+//        console.log(title);
+
+//    $('div').attr('title','div1');
+
+//获取匹配的元素集中第一个元素的属性值  或设置每一个匹配元素的一个或多个属性。
+//获取匹配的元素集中第一个元素的属性的值  或 设置每一个匹配元素的一个或多个属性。
+
+
+</script>
+</body>
+</html>

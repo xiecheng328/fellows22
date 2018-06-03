@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul class="bb">
+        <li id="111">1</li>
+        <li id="222" class="aa">2</li>
+        <li id="333">3</li>
+    </ul>
+    <!--<div class="bb">-->
+        <!--bbbbb-->
+        <!--<p>ppppp</p>-->
+        <!--<div class=>-->
+            <!--ccccc-->
+            <!--<p id="pp1">p1p1p1p</p>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div>-->
+        <!--<h1>hhhhhhh</h1>-->
+        <!--<p>pp</p>-->
+    <!--</div>-->
+
+<div class="div1">
+    <div class="div1">
+        div
+        <p>ppppp</p>
+    </div>
+    <div>
+        div
+        <p>p1p1p1p1p</p>
+    </div>
+
+
+</div>
+
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+//    $('p').parents('.div1').css('background','red');
+$('.aa').siblings().addBack().css('background','red');
+
+
+    //    [1,2,3,4]. [2,3,4] [2,3,4,5] [2,3]
+//end();
+//    $('.bb').children('p').filter('#pp1').addBack().css('background','red');;
+
+//    $('li').add('.bb').css('background','red');
+
+//    $('li').slice(1,2).css('background','red');
+
+//    var b = $('li').map(function(a,b){
+//        if(a == 1||a==2){
+//            return b;
+//        }
+//    });
+//
+//    b.addClass('bbbb');
+
+//    $('li').last().css('background','red');
+//    $('li').filter('.aa').css('background','red');
+//      $('li').not('.aa').css('background','red');
+//    $('div').has('p').css('background','red');
+
+//    $("ul").click(function(event) {
+//        var $target = $(event.target);
+//        if ( $target.is("li") ) {
+//            $target.css("background-color", "red");
+//        }
+//    });
+
+</script>
+</body>
+</html>
