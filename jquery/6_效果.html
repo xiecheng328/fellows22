@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">点我</button>
+<button id="btn1">显示</button>
+    <div id="div1">
+
+    </div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('#btn').on('click',function(){
+
+
+        $('#div1').animate({width:500},3000,function () {
+            console.log(1111);
+        }).animate({height:400},3000,function () {
+            console.log(1111);
+        });
+
+
+
+
+//        $('#div1').fadeOut('fast');
+//        $('#div1').fadeTo(2000,'0.3',function(){
+//            console.log('结束');
+//        });
+//        $('#div1').slideUp(5000);
+
+
+    });
+    $('#btn1').on('click',function(){
+//        $('#div1').slideDown(5000);
+//        $('#div1').fadeIn("fast");
+        $('#div1').stop(true,true);
+    });
+
+
+
+
+</script>
+</body>
+</html>

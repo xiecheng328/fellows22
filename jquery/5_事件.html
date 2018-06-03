@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+    <ul>
+        <li>1001</li>
+        <li id="li1">2001</li>
+        <li>3001</li>
+    </ul>
+    <input id='ipt' type="text">
+<script src="jquery-1.12.4.js"></script>
+    <script>
+//        $('li').one('blur',function(){
+//            console.log($(this).index());
+//        })
+//        $('#ipt').on('blur',function(){
+//            console.log($(this).val());
+//        })
+        $('#ipt').on('keyup',function(e){
+            console.log(e.which);
+        })
+//        $('#ipt').blur(function(){
+//            console.log($(this).val());
+//        });
+
+
+
+
+//        var fn = function(){
+//            console.log(11111);
+//        };
+
+//        $('#li1').on('click',fn);
+
+//        $('#li1').off('click',fn);
+
+
+//        $('ul').on('click','li',function(){
+//            console.log($(this));
+//        })
+
+        //        $(window).resize(function(){
+        //            console.log(11111);
+        //        })
+//
+//        $(function(){
+//
+//            $('#div1').html(11111);
+//
+//        })
+//
+//        $(document).ready(function(){
+//            $('#div1').html(11111);
+//        })
+
+    </script>
+</body>
+</html>
