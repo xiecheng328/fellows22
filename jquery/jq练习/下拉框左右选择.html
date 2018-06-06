@@ -73,18 +73,23 @@
             .appendTo($('#select1'));
     })
 
-    $('option',"#select1").on('dblclick',function(){
+//    $('option',"#select1").on('dblclick',function(){
 //        console.log(1111);
-        $(this).appendTo($('#select2'));
-    })
-
-
-//    $('#select1').on('dblclick','option',function () {
 //        $(this).appendTo($('#select2'));
-//    });
-//    $('#select2').on('dblclick','option',function () {
+//    })
+//
+//    $('option',"#select2").on('dblclick',function(){
+////        console.log(1111);
 //        $(this).appendTo($('#select1'));
-//    });
+//    })
+
+
+    $('#select1').on('dblclick','option',function () {
+        $(this).appendTo($('#select2'));
+    });
+    $('#select2').on('dblclick','option',function () {
+        $(this).appendTo($('#select1'));
+    });
 
 
 </script>
