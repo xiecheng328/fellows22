@@ -47,10 +47,10 @@
         <script type="text/javascript">
             $(function(){
                 $('.hmain').hover(function(){
-                    $(this).find('ul').slideDown().end().
+                    $(this).find('ul').stop(true,false).slideDown().end().
                     children('a').css('background-image','url(images/up.gif)');
                 },function(){
-                    $(this).find('ul').slideUp().end().children('a').css('background-image','url(images/down.gif)');
+                    $(this).find('ul').stop(true,false).slideUp().end().children('a').css('background-image','url(images/down.gif)');
 
                 })
             })
