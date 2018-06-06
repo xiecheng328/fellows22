@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Untitled Document</title>
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+    <body>
+
+        <ul>
+            <li class="hmain">
+                <a href="#">菜单项1</a>
+                <ul>
+                <li>
+                    <a href="#">子菜单11</a>
+                </li>
+                <li>
+                    <a href="#">子菜单12</a>
+                </li>
+            </ul>
+            </li>
+            <li class="hmain">
+                <a href="#">菜单项2</a>
+                <ul>
+                    <li>
+                        <a href="#">子菜单21</a>
+                    </li>
+                    <li>
+                        <a href="#">子菜单22</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hmain">
+                <a href="#">菜单项3</a>
+                <ul>
+                    <li>
+                        <a href="#">子菜单31</a>
+                    </li>
+                    <li>
+                        <a href="#">子菜单32</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <script src="../jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('.hmain').hover(function(){
+                    $(this).find('ul').slideDown().end().
+                    children('a').css('background-image','url(images/up.gif)');
+                },function(){
+                    $(this).find('ul').slideUp().end().children('a').css('background-image','url(images/down.gif)');
+
+                })
+            })
+        </script>
+    </body>
+</html>
