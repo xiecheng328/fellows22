@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.aa+div{
+            background: #ff0000;
+        }
+
+        li:hover{
+            background: #00ff00;
+        }
+        #div1{
+            width: 100px;
+            border: 1px solid;
+        }
+
+        #div1::first-line{
+            background: #ff0000;
+        }
+
+        input[type="text"]{
+            background: #00ff00;
+        }
+        input[type="text"]:focus{
+            background: #ff0000;
+        }*/
+
+        /*#ul1 li:not(.aa){
+            background: #ff0000;
+        }*/
+
+        /*div span:first-of-type {
+            background: #ff0000;
+        }
+*/
+        div p:only-of-type{
+            background: #ff0000;
+        }
+
+        /*#ul1 li:nth-child(2n-1){
+            background: #ff0000;
+        }*/
+    </style>
+</head>
+<body>
+<ul id="ul1" class="user-list">
+    <li>01</li>
+    <li class="aa">02</li>
+    <li>03</li>
+    <div>div</div>
+    <li>04</li>
+    <li>05</li>
+</ul>
+
+<div id="div1">
+    阿双方大师傅阿斯顿发生发送到发顺丰阿斯顿发顺丰
+</div>
+
+<input type="text" disabled>
+
+
+<!--<div>
+    <a href="">aaaaa</a>
+    <a href="">aaaaa</a>
+    <a href="">aaaaa</a>
+    <span>John,</span>
+    <span>Karl,</span>
+    <span>Brandon</span>
+</div>
+<div>
+    <span>Glen,</span>
+    <span>Tane,</span>
+    <span>Ralph</span>
+</div>-->
+
+
+    <div>
+        <p>p1</p>
+    </div>
+    <div>
+        <p>p2</p>
+        <p>p3</p>
+    </div>
+
+    <div>
+        <div>divdiv</div>
+        <p>p4</p>
+        <p>p5</p>
+    </div>
+</body>
+</html>
+
+
+<!--
+1 2 3
+4 5 6
+7 8 9
+10 11 12
+
+
+:nth-child(3n - 2)
+:nth-child(3n)-->
