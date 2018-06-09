@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            height: 100%;
+        }
+        #parent{
+            height: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+        #top, #bottom{
+            height: 30px;
+            background: #ff0000;
+        }
+
+        #center{
+            background: #cccccc;
+            -webkit-box-flex: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="top"></div>
+        <div id="center"></div>
+        <div id="bottom"></div>
+    </div>
+</body>
+</html>

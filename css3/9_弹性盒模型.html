@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .parent{
+            display: -webkit-box;
+            /*-webkit-box-orient: horizontal;*/
+            /*-webkit-box-direction: reverse;*/
+            /*-webkit-box-align: center;*/
+        }
+
+        .child{
+            width: 0;
+        }
+        .child:nth-child(1){
+            height: 300px;
+
+            background: #ff0000;
+            -webkit-box-flex: 1;
+            -webkit-box-ordinal-group: 3;
+        }
+        .child:nth-child(2){
+            height: 400px;
+
+            background: #0f0;
+            -webkit-box-flex: 1;
+            -webkit-box-ordinal-group: 1;
+        }
+        .child:nth-child(3){
+            height: 500px;
+
+            background: #ff0;
+            -webkit-box-flex: 1;
+            -webkit-box-ordinal-group: 2;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <div>123</div>
+        </div>
+        <div class="child">
+            <h1>456</h1>
+        </div>
+        <div class="child">
+            <h5>789asdfasfasfasfasfasfasdfasfasdfasf</h5>
+        </div>
+    </div>
+
+</body>
+</html>
