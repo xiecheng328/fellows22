@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1::before{
+            content: '<h1>hhhh</h1>';
+            background: #ff0000;
+            /*display: block;*/
+        }
+
+        #ul1{
+            /*height: 22px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+        }
+
+        #temp{
+            clear: both;
+        }
+
+        #ul1 li{
+            list-style: none;
+            float: left;
+        }
+
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        a::after{
+            content: attr(id);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div1">div</div>
+
+    <ul id="ul1" class="clearfix">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+        <!--<div id="temp"></div>-->
+    </ul>
+    <h1>一个标题</h1>
+
+
+    <a href="http://www.baidu.com" id="baidu"></a>
+    <a href="http://www.taobao.com" id="taobao"></a>
+    <a href="http://www.jd.com" id="jd"></a>
+</body>
+</html>
+
