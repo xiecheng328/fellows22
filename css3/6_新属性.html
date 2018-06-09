@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+
+    <style>
+        #div1{
+            text-shadow: 5px 5px 5px rgba(255, 0, 0, 1);
+            font-family: 'Serendity Script';
+
+
+        }
+
+        #div2{
+            width: 100px;
+            border: 1px solid;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #div2{
+            width: 100px;
+            border: 1px solid;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* 定义字体 */
+        @font-face {
+            font-family: 'Serendity Script';
+            src: url('Serendipity Script/Serendity Script.eot'); /* IE9+ */
+            src: url('Serendipity Script/Serendity Script.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('Serendipity Script/Serendity Script.woff') format('woff'), /* chrome、firefox */
+            url('Serendipity Script/Serendity Script.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('Serendipity Script/Serendity Script.svg#fontname') format('svg'); /* iOS 4.1- */
+        }
+
+        .icon-big-WeChat{
+            font-size: 50px;
+            color: #f00;
+        }
+
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            -webkit-border-radius: 20px 30px 40px 50px;
+            -moz-border-radius: 20px 30px 40px 50px;
+            border-radius: 20px 30px 40px 50px;
+
+            -webkit-box-shadow: 10px 10px 5px 10px #00ff00;
+            -moz-box-shadow: 10px 10px 5px 10px #00ff00;
+            box-shadow: 10px 10px 5px 10px #00ff00;
+        }
+        
+        #div4{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            /*-webkit-border-image: url(border-img.png);*/
+            /*-moz-border-image: url(border-img.png);*/
+            /*-o-border-image: url(border-img.png);*/
+            border-image: url(border-img.png) 27 repeat;
+            border-width: 27px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        唯创网讯abcdefg
+    </div>
+
+    <div id="div2">
+        阿双方大师傅阿斯顿发顺丰按时发生发生分安防安防
+    </div>
+    <i class="iconfont icon-big-WeChat"></i>
+    <i class="iconfont icon-weixin"></i>
+
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>
