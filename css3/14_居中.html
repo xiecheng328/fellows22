@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            background: green;
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        #div2{
+            background: blue;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            /*margin-top: -100px;*/
+            /*margin-left: -100px;*/
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+</body>
+</html>
