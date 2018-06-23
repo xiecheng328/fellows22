@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            height: 100%;
+        }
+        #container{
+            height: 100%;
+            background: url("img/bg.jpg");
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <script>
+        /*图片预加载*/
+        var count = 0;
+        for(var i=0; i<24; i++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            };
+            oImg.src= 'img/'+(i+1)+'.jpg';
+        }
+        for(var j=0; j<24; j++){
+            var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count == 48){
+                    loadSuccess();
+                }
+            };
+            oImg.src= 'img/thumbs/'+(j+1)+'.jpg';
+        }
+        function loadSuccess(){
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
