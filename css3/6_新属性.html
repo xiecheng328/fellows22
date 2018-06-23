@@ -16,7 +16,7 @@
         #div2{
             width: 100px;
             border: 1px solid;
-
+/*单行文本溢出...*/
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -25,7 +25,7 @@
         #div2{
             width: 100px;
             border: 1px solid;
-
+/*多行文本溢出...*/
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
@@ -72,6 +72,17 @@
             border-width: 27px;
             border-style: solid;
         }
+        
+        #div8{
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.5);
+
+            /*background: #000000;*/
+            /*opacity: 0.5;*/
+            color: #f00;
+            -webkit-box-shadow: 5px 10px 5px 10px #f00;
+        }
     </style>
 </head>
 <body>
@@ -87,5 +98,8 @@
 
     <div id="div3"></div>
     <div id="div4"></div>
+    <div id="div8">
+        <p>dfghjk;ljhfgjk</p>
+    </div>
 </body>
 </html>
