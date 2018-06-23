@@ -26,6 +26,13 @@
 
             -webkit-transition: all 2s ease ;
         }
+        .img-box span{
+            width: 125px;
+            height: 125px;
+            display: block;
+            background: #ff0000;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +73,8 @@
                         row:i,
                         col:j
                     };
+                    oDiv.innerHTML = '<span></span>';
+                    oDiv.idx = index;
                     index++;
                     oDiv.style.background = 'url(img/thumbs/'+index+'.jpg)';
                     oDiv.onclick = fn;
@@ -99,6 +108,12 @@
                     oImg.style.left = oImg.pos.col*127 + iLeft+"px";
                     oImg.style.top = oImg.pos.row*127+iTop+"px";
                     oImg.style.WebkitTransform = 'rotate(0deg)';
+                    var oSpan = oImg.getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 1;
+                    var x = oImg.pos.col * -125;
+                    var y = oImg.pos.row *-125;
+                    oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px';
+
                 }
             }
 
