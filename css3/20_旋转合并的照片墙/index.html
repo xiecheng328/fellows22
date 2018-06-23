@@ -14,7 +14,17 @@
         #container{
             height: 100%;
             background: url("img/bg.jpg");
+            position: relative;
+        }
+        .img-box{
+            width: 125px;
+            height: 125px;
+            border:5px solid #fff;
+            position: absolute;
+            left:-135px;
+            top:-135px;
 
+            -webkit-transition: all 2s ease ;
         }
     </style>
 </head>
@@ -23,6 +33,7 @@
     </div>
     <script>
         /*图片预加载*/
+        var oContainer = document.getElementById('container');
         var count = 0;
         for(var i=0; i<24; i++){
             var oImg = new Image();
@@ -44,10 +55,58 @@
             };
             oImg.src= 'img/thumbs/'+(j+1)+'.jpg';
         }
+        var index = 0;
         function loadSuccess(){
+            /*生成24个元素*/
+            for(var i=0; i<4;i++){ //行
+                for(j=0; j<6; j++){  //列
+                    var oDiv = document.createElement('div');
+                    oDiv.className = 'img-box';
+                    oDiv.pos = {
+                        row:i,
+                        col:j
+                    };
+                    index++;
+                    oDiv.style.background = 'url(img/thumbs/'+index+'.jpg)';
+                    oDiv.onclick = fn;
+                    oContainer.appendChild(oDiv);
+                }
+            }
+            var spaceY = (oContainer.offsetHeight - 135*4)/5;
+            var spaceX = (oContainer.offsetWidth - 135*6)/7;
+            var aImg = oContainer.getElementsByTagName('div');
+            /*初始化位置*/
+            for(var k=0; k<24; k++){
+               /* 0          1                    n
+                1*spaceX+0img   2*spaceX+1*img  (n+1)*spaceX + n*img*/
+                var oImg = aImg[k];
+                oImg.style.webkitTransitionDelay = (24-k)*100 +"ms";
+                oImg.style.left = (oImg.pos.col+1) * spaceX +  oImg.pos.col*135 +"px";
+                oImg.style.top = (oImg.pos.row+1) * spaceY +  oImg.pos.row*135 +"px";
+                oImg.style.WebkitTransform = 'rotate('+  (Math.random()*40-20) +'deg)';
+            }
+
+            var iTop =(oContainer.offsetHeight - 127*4)/2;
+            var iLeft =(oContainer.offsetWidth - 127*6)/2;
+            function fn(){
+                //点击时合上
+                for(var i=0; i<24; i++){
+                    var oImg = aImg[i];
+                    oImg.style.webkitTransitionDelay ="0ms";
+                    oImg.style.border = '1px solid #fff';
+                   /* 0        1             2             n
+                    0img+1*ileft  1img +1iLeft  2img +1iLeft   n*img+iLeft*/
+                    oImg.style.left = oImg.pos.col*127 + iLeft+"px";
+                    oImg.style.top = oImg.pos.row*127+iTop+"px";
+                    oImg.style.WebkitTransform = 'rotate(0deg)';
+                }
+            }
 
 
-        }
+
+
+
+        };
 
 
 
