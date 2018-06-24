@@ -153,6 +153,7 @@
                         oImg.style.WebkitTransform = 'rotate('+(Math.random()*40-20)+'deg)';
                         oImg.style.border = '5px solid #fff';
                         var oSpan = oImg.getElementsByTagName('span')[0];
+                        oSpan.style.WebkitTransitionDelay = '0ms';
                         oSpan.style.opacity = 0;
                     }
                     oPrev.style.display = 'none';
@@ -164,15 +165,15 @@
             var aSpan = oContainer.getElementsByTagName('span');
             oNext.onclick = function(){
                 iNow++;
+                if(iNow == aSpan.length){
+                    iNow = 0;
+                }
                 for(var i=0; i<aSpan.length; i++){
+                    //0-500
+                    aSpan[i].style.WebkitTransitionDelay = Math.random()*500+'ms';
                     aSpan[i].style.backgroundImage = 'url(img/'+(iNow+1)+'.jpg)';
                 }
             }
-
-
-
-
-
         };
 
 
