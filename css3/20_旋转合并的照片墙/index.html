@@ -97,24 +97,38 @@
 
             var iTop =(oContainer.offsetHeight - 127*4)/2;
             var iLeft =(oContainer.offsetWidth - 127*6)/2;
+            var flag = true; //true打开  false合并
             function fn(){
-                //点击时合上
-                for(var i=0; i<24; i++){
-                    var oImg = aImg[i];
-                    oImg.style.webkitTransitionDelay ="0ms";
-                    oImg.style.border = '1px solid #fff';
-                   /* 0        1             2             n
-                    0img+1*ileft  1img +1iLeft  2img +1iLeft   n*img+iLeft*/
-                    oImg.style.left = oImg.pos.col*127 + iLeft+"px";
-                    oImg.style.top = oImg.pos.row*127+iTop+"px";
-                    oImg.style.WebkitTransform = 'rotate(0deg)';
-                    var oSpan = oImg.getElementsByTagName('span')[0];
-                    oSpan.style.opacity = 1;
-                    var x = oImg.pos.col * -125;
-                    var y = oImg.pos.row *-125;
-                    oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px';
-
+                if(flag){
+                    //点击时合上
+                    for(var i=0; i<24; i++){
+                        var oImg = aImg[i];
+                        oImg.style.webkitTransitionDelay ="0ms";
+                        oImg.style.border = '1px solid #fff';
+                        /* 0        1             2             n
+                         0img+1*ileft  1img +1iLeft  2img +1iLeft   n*img+iLeft*/
+                        oImg.style.left = oImg.pos.col*127 + iLeft+"px";
+                        oImg.style.top = oImg.pos.row*127+iTop+"px";
+                        oImg.style.WebkitTransform = 'rotate(0deg)';
+                        var oSpan = oImg.getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 1;
+                        var x = oImg.pos.col * -125;
+                        var y = oImg.pos.row *-125;
+                        oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px';
+                    }
+                }else{
+                    //点击打开
+                    for(var i=0; i<24; i++){
+                        var oImg = aImg[i];
+                        oImg.style.left = (oImg.pos.col+1) * spaceX +  oImg.pos.col*135 +"px";
+                        oImg.style.top = (oImg.pos.row+1) * spaceY +  oImg.pos.row*135 +"px";
+                        oImg.style.WebkitTransform = 'rotate('+(Math.random()*40-20)+'deg)';
+                        oImg.style.border = '5px solid #fff';
+                        var oSpan = oImg.getElementsByTagName('span')[0];
+                        oSpan.style.opacity = 0;
+                    }
                 }
+                flag = !flag;
             }
 
 
