@@ -33,15 +33,38 @@
             background: #ff0000;
             opacity: 0;
         }
+        #prev,#next{
+            width: 40px;
+            height: 80px;
+            position: absolute;
+            display: none;
+            top:50%;
+            /*margin-top:-40px;*/
+            transform: translateY(-50%);
+        }
+        #prev{
+            border-radius: 0 10px 10px 0;
+            left:0px;
+            background:#fff url(img/prev.png) no-repeat center center ;
+        }
+        #next{
+            border-radius: 10px 0 0 10px;
+            right:0px;
+            background:#fff url(img/next.png) no-repeat center center ;
+
+        }
     </style>
 </head>
 <body>
     <div id="container">
     </div>
+    <div id="prev"></div>
+    <div id="next"></div>
     <script>
         /*图片预加载*/
         var oContainer = document.getElementById('container');
         var count = 0;
+        var iNow = 0;
         for(var i=0; i<24; i++){
             var oImg = new Image();
             oImg.onload = function(){
@@ -98,6 +121,8 @@
             var iTop =(oContainer.offsetHeight - 127*4)/2;
             var iLeft =(oContainer.offsetWidth - 127*6)/2;
             var flag = true; //true打开  false合并
+            var oPrev = document.getElementById('prev');
+            var oNext = document.getElementById('next');
             function fn(){
                 if(flag){
                     //点击时合上
@@ -116,6 +141,9 @@
                         var y = oImg.pos.row *-125;
                         oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px';
                     }
+                    oPrev.style.display = 'block';
+                    oNext.style.display = 'block';
+                    iNow = this.idx;
                 }else{
                     //点击打开
                     for(var i=0; i<24; i++){
@@ -127,8 +155,18 @@
                         var oSpan = oImg.getElementsByTagName('span')[0];
                         oSpan.style.opacity = 0;
                     }
+                    oPrev.style.display = 'none';
+                    oNext.style.display = 'none';
                 }
                 flag = !flag;
+            }
+
+            var aSpan = oContainer.getElementsByTagName('span');
+            oNext.onclick = function(){
+                iNow++;
+                for(var i=0; i<aSpan.length; i++){
+                    aSpan[i].style.backgroundImage = 'url(img/'+(iNow+1)+'.jpg)';
+                }
             }
 
 
