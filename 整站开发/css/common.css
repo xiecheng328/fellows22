@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*公共样式head开始*/
+.header{
+    /*background: #ff0000;*/
+    overflow: hidden;
+}
+.wrapper{
+    width: 1002px;
+    margin:0 auto;
+}
+
+.logo{
+    float: left;
+    margin-top:28px;
+}
+.nav{
+    float: left;
+    margin-top:53px;
+    margin-left: 126px;
+}
+.nav li{
+    padding: 0 19px 0 25px;
+    float: left;
+    font-size: 15px;
+    color:#626262;
+    position: relative;
+    font-family: "PT Sans";
+    /*border-right:1px solid #6b6b6b;*/
+}
+.nav li::after{
+    content: '';
+    width: 1px;
+    height: 14px;
+    position: absolute;
+    right: 0;
+    top:50%;
+    margin-top:-7px;
+    background: #6b6b6b;
+}
+
+
+
+/*head结束*/
