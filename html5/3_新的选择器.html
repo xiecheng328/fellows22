@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="div1">fdggjhlj;</div>
+
+<div class="aa">tsdfsdfh</div>
+<div class="aa">ffff</div>
+<div class="aa">fxtfghiogf</div>
+
+<div id="div2" class="aa bb cc"></div>
+<script>
+ /*   var oDiv = document.getElementById('div1');  //dom对象  null
+    var arr = document.getElementsByClassName('aa') //节点列表  （数组）[]
+    var arr = document.getElementsByTagName('p') //节点列表  （数组） []
+    var arr = document.getElementsByName('XX') //节点列表  （数组） []
+
+    for(var i=0; i< arr.length; i++){
+        arr[i]
+    }*/
+
+//    arr.pop();
+
+//    document.querySelector('#div1');
+/*    var oDiv = document.querySelector('.aa');
+
+    oDiv.style.background = '#f00';*/
+
+   /* var aDiv = document.querySelectorAll('.aa');
+
+
+  for(var i=0;i<aDiv.length; i++){
+  aDiv[i].style.background = '#f00';
+  }*/
+    var oDiv2 = document.getElementById('div2');
+    /*console.log(oDiv2.className ); //"aa bb cc"
+
+    oDiv2.className = "aa cc";*/
+
+    console.log(oDiv2.classList.length);
+
+    oDiv2.classList.add('dd');
+    oDiv2.classList.remove('aa');
+    oDiv2.classList.toggle('ee');
+
+
+
+
+</script>
+
+</body>
+</html>
