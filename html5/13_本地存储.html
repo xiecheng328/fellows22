@@ -8,14 +8,14 @@
 
 <script>
 
-    var date = new Date();
+   /* var date = new Date();
     date.setDate(25);
 
 
 
     document.cookie = 'name=zhangsan;expires='+date;
     document.cookie = 'name=zhangsan';
-    document.cookie = 'age=20;expires='+date;
+    document.cookie = 'age=20;expires='+date;*/
 
     function setCookie(key,value,day){
 
@@ -29,12 +29,29 @@
     }
     setCookie('xxx','lisi');
     setCookie('bbb','aaa',25);
+    setCookie('name','zhangsan',25);
 
 
     function getCookie(key){
+        //"xxx=lisi; bbb=aaa; name=zhangsan"
+        var arr = document.cookie.split("; ");  //["xxx=lisi"," bbb=aaa","name=zhangsan"];
 
+        for(var i=0; i<arr.length; i++){
+            var arr2 = arr[i].split("=");  //  ["bbb","aaa"]
+            if(key == arr2[0]){
+                return arr2[1];
+            }
+        }
     }
-    getCookie('name');
+    console.log( getCookie('name') );
+    console.log( getCookie('bbb') );
+
+
+    function removeCookie(key){
+        setCookie(key,"",-1);
+    }
+
+    removeCookie('name');
 
 
 

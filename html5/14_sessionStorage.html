@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*sesion域 浏览器关闭 */
+    sessionStorage.name = 'lisi';
+    /*localStorage一直存在 除非用户手动清楚*/
+    localStorage.age = '30';
+
+    sessionStorage.setItem('aa','bb');
+    localStorage.setItem('cc','dd');
+    localStorage.removeItem('cc');
+    localStorage.clear();
+    console.log(localStorage.getItem('cc'));
+    /*
+    * 1. 存储大小  cookie  4k
+    *             localStorage sessionStorage  至少5M
+    * 2. 生命周期  cookie  手动设置过期时间
+    *             localStorage  一直存在 除非手动清楚
+    *             sessionStorage 浏览器关闭
+    * 3.cookie  所有同源的 http请求中携带 发送到后台
+    *
+    * */
+
+
+
+
+
+</script>
+
+</body>
+</html>

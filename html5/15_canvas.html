@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #000000;
+        }
+        #canvas1{
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="400" height="500">
+    </canvas>
+
+    <script>
+        var oCanvas = document.getElementById('canvas1');
+        /*返回一个用于在画布上绘图的环境。*/
+        var oCtx = oCanvas.getContext('2d');
+     /*   oCtx.moveTo(20,20);
+        oCtx.lineTo(80,80);
+        oCtx.strokeStyle = "#f00";
+        oCtx.stroke();*/
+
+
+       /* oCtx.beginPath();
+        oCtx.moveTo(80,80);
+        oCtx.lineTo(10,80);
+
+        oCtx.lineTo(50,100);
+//        oCtx.closePath();
+
+        oCtx.strokeStyle = "#000";
+        oCtx.stroke();*/
+
+
+
+        oCtx.arc(200,250,100,0,Math.PI,true);
+        oCtx.strokeStyle = 'pink';
+        oCtx.stroke();
+        /*度数 =>  弧度    度数*Math.PI/180      */
+
+        oCtx.beginPath();
+        oCtx.arc(200,250,100,0,30*Math.PI/180,false);
+        oCtx.strokeStyle = 'red';
+        oCtx.stroke();
+
+        oCtx.beginPath();
+        oCtx.rect(0,0,100,100);
+//        oCtx.stroke();
+        oCtx.fill();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
