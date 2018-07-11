@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+   /*
+    js数据类型：基本数据类型  引用数据类型
+
+    基本数据类型：number string boolean undefined null
+
+    引用数据类型：对象 数组
+
+    */
+/*
+   var str = "abc";
+   var str2 = str;
+
+   str = 'efg';
+   console.log(str2);*/
+
+
+
+
+   /*
+    var person2 = person1;
+
+    person1.name = "wangwu";
+
+    console.log(person2.name);
+*/
+
+   var person1 = {
+       name:'zhangsan',
+       age:20,
+       father:{
+           name:'zxx'
+       }
+   };
+    function clone(obj){
+        var newObj = {};
+        for(key in obj){
+            if(typeof obj[key] == "object"){
+                newObj[key] = clone(obj[key]);
+            }else{
+                newObj[key] = obj[key];
+            }
+//            newobj.father = obj.father;
+        }
+        return newObj;
+    }
+    var person2 = clone(person1);
+
+    person1.father.name = 'zyy';
+
+    console.log(person2.father.name);
+
+
+</script>
+
+</body>
+</html>

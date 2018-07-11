@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="a.js" defer></script>
+    <!--<script src="b.js" defer></script>-->
+    <!--<script src="c.js" defer></script>-->
+    <style>
+        #div1{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        dfghjk
+    </div>
+    <!--
+        async 标准浏览器 加载完 就执行，不能保证js执行顺序
+        defer ie 标准浏览器也支持  理论上 js文件都加载完  domContentload执行前执行
+        能保证顺序秩序
+    -->
+
+</body>
+</html>

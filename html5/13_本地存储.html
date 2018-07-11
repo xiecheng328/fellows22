@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    var date = new Date();
+    date.setDate(25);
+
+
+
+    document.cookie = 'name=zhangsan;expires='+date;
+    document.cookie = 'name=zhangsan';
+    document.cookie = 'age=20;expires='+date;
+
+    function setCookie(key,value,day){
+
+        var str = key+"="+value+";";
+        if(day){ /*是否传值，传值day有效值 */
+            var date = new Date();
+            date.setDate( date.getDate()+day );
+            str += 'expires='+date;
+        }
+        document.cookie = str;
+    }
+    setCookie('xxx','lisi');
+    setCookie('bbb','aaa',25);
+
+
+    function getCookie(key){
+
+    }
+    getCookie('name');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

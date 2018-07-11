@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <button id="btn">click</button>
+    <div id="content">
+
+    </div>
+
+    <script>
+
+//        7个数   1-35
+
+        var oBtn = document.querySelector('#btn');
+        var oContent = document.querySelector('#content');
+        var obj = {};
+        oBtn.onclick = function(){
+            var arr = [];
+            for(var i=0; i<7;i++){
+
+                arr.push(    Math.floor(Math.random()*35+1)    );
+            }
+            oContent.innerHTML = arr;
+            var num = Math.random();
+            location.hash = num;
+            obj[num] = arr;
+        }
+        /*点击历史按钮触发事件*/
+        window.onhashchange = function(){
+
+            var iHash = location.hash.substr(1);
+//            console.log(   obj[iHash]   );
+            if(obj[iHash]){ //是否是有效值  非0 数字   非空字符串  非undefined  非null
+                oContent.innerHTML = obj[iHash];
+            }else{
+                oContent.innerHTML = '';
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

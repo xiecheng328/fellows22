@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!--json  javascript object notation -->
+
+    <script>
+
+        var person1 = {
+            name:'zs',
+            age:20
+        }
+
+
+
+
+        /*[{
+            "img":"http://www.aa.xx.jpg",
+            "title":"个单位跟任务对于规范 ",
+            "price":10
+        }, {
+                "img":"http://www.aa.xx.jpg",
+                "title":"个单位跟任务对于规范 ",
+                "price":10
+            },{
+            "img":"http://www.aa.xx.jpg",
+            "title":"个单位跟任务对于规范 ",
+            "price":10
+        }]*/
+
+
+
+      var per = '{"name":"lisi","age":20,"school":"农大","hobby":["sing","dance"]}'
+//        per.name
+
+        /*字符串转化成对象   JSON.parse*/
+      var oPerson = JSON.parse(per);
+        console.log(oPerson.name);
+        var person2 = {
+            "name":"lisi",
+            "age":20,
+            "school":"农大",
+            "hobby":["sing","dance"]
+        };
+
+        /*对象转化字符串  JSON.stringify*/
+        var str = JSON.stringify(person2);
+        console.log(str);
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
