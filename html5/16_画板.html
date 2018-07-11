@@ -15,15 +15,13 @@
     </style>
 </head>
 <body>
+<!--echarts-->
     <canvas id="canvas1" width="400" height="500"></canvas>
     <script>
-
         var oCanvas = document.getElementById('canvas1');
         var oCtx = oCanvas.getContext('2d');
-
         oCanvas.onmousedown = function(e){
             oCtx.moveTo(e.clientX, e.clientY);
-
             oCanvas.onmousemove = function(e){
                 oCtx.lineTo(e.clientX, e.clientY);
                 oCtx.stroke();
