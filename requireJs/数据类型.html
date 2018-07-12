@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var str = 'abc';
+    var num = 10;
+    var bool = true;
+    var a = undefined;
+    var b = null;
+    var arr = [1,2,3];   //new Array()
+    var obj = {
+        name:'zhangsan'
+    };
+
+
+    console.log(  typeof str);  //"string";
+    console.log(  typeof num);  //"number";
+    console.log(  typeof bool);  //"boolean";
+    console.log(  typeof a);  //"undefined";
+    console.log(  typeof b);  //"object"; 空对象
+    console.log(  typeof arr);  //"object";
+    console.log(  typeof obj);  //"object";
+
+    console.log(  arr instanceof Array); //判断arr 是都是Array的一个实例化对象
+    console.log(  obj instanceof Object); //判断obj 是都是Object的一个实例化对象
+
+    console.log( arr.constructor == Array);  //arr.constructor 返回arr的构造函数
+
+    console.log(  Array.isArray(arr)  );  //ie8以上
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

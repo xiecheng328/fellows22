@@ -1,13 +1,17 @@
 /**
  * Created by apple on 18/7/12.
  */
-define(function(){
+define(['isArray'],function(isArray){
 
     function sortArray(arr){
-        arr.sort(function(x,y){
-            return x-y;
-        });
-        return arr;
+        if(isArray(arr)){
+            arr.sort(function(x,y){
+                return x-y;
+            });
+            return arr;
+        }else{
+            return '请输入数组';
+        }
     }
 
 
