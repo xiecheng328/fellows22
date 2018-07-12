@@ -33,6 +33,7 @@ define(['jquery-1.12.4'],function(){
         },
         close:function(){
             $('.dialog-mask').remove();
+            //$mask.remove();
         }
     };
 
