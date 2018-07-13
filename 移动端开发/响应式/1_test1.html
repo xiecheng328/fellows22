@@ -5,12 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title></title>
+
+    <link rel="stylesheet" href="css1" media="screen and min-width=1200px"/>
+    <link rel="stylesheet" href="css2" media="screen and max-width=768"/>
     <style>
         *{
             margin: 0;
             padding: 0;
         }
-        @media screen and (min-width:1200px){
+        /*@media screen and (min-width:1200px){
             body{
                 background: #ff0000;
             }
@@ -19,8 +22,13 @@
             body{
                 background: #00ff00;
             }
-        }
+        }*/
+        @media screen and (orientation:portrait ){
+            body{
+                background: #f000f0;
+            }
 
+        }
 
 
     </style>
