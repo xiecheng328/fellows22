@@ -50,7 +50,9 @@ h3{
     .img-box{
         width:100%;
         background-image: url("img/01_s_2x.jpg");
-        height:56vw;  /*vm视口宽度的百分比    vh 视口高度的百分比  */
+        /*height:56vw;  /!*vm视口宽度的百分比    vh 视口高度的百分比  *!/*/
+        padding-top: 56%;
+        height: 0px;
     }
     .text-box{
         width:100%;

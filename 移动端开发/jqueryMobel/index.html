@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="myTheme.min.css"/>
+    <link rel="stylesheet" href="jquery.mobile.icons.min.css"/>
+</head>
+<body>
+<div data-role="page" data-theme="d">
+
+    <div data-role="header">
+        <h1>欢迎访问我的主页</h1>
+    </div>
+
+    <div data-role="content">
+
+        <button>按钮</button>
+        <a href="#anylink" data-role="button" data-icon="search">搜索</a>
+
+        <h2>有序列表：</h2>
+        <ol data-role="listview">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ol>
+        <h2>无序列表：</h2>
+        <ul data-role="listview">
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+            <li><a href="#">列表项</a></li>
+        </ul>
+
+
+        <div data-role="fieldcontain">
+            <label for="search">Search:</label>
+            <input type="search" id="search">
+        </div>
+
+
+
+        <fieldset data-role="fieldcontain">
+            <label for="day">选择日期</label>
+            <select name="day" id="day">
+                <option value="mon">星期一</option>
+                <option value="tue">星期二</option>
+                <option value="wed">星期三</option>
+            </select>
+        </fieldset>
+    </div>
+
+    <div data-role="footer">
+        <h1>页脚文本</h1>
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+
+</script>
+</body>
+</html>

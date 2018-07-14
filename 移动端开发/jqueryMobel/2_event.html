@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <style>
+
+        #div1{
+            width: 100%;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            position: absolute;
+            left:10px;
+            top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    </div>
+    <div id="div2">
+    </div>
+    <script>
+        /*$('#div1').on('touchstart',function(){
+            console.log('start');
+        });
+        $('#div1').on('touchend',function(){
+            console.log('end');
+        });
+        $('#div1').on('touchmove',function(){
+            console.log('move');
+        });
+        $('#div1').on('touchcancel',function(){
+            console.log('cancel');
+        });
+        */
+
+        /*tap 点击事件   click有300ms延时   点击还是双击*/
+       /* $('#div1').on('tap',function(){
+            console.log('tap');
+        });
+        $('#div1').on('click',function(){
+            console.log('click');
+        });*/
+
+        /*tap点透  上下两层 上边元素tap  点击隐藏
+         如果下边的元素 有点击事件  a  input 都会触发
+
+
+         原因:zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，
+         并且tap事件是冒泡到document上触发的！！！而在冒泡到document之前
+         ，用户手的接触屏幕(touchstart)和离开屏幕(touchend)是会触发click事件的,
+         因为click事件有延迟触发(这就是为什么移动端不用click而用tap的原因)(
+         大概是300ms,为了实现safari的双击事件的设计)，所以在执行完tap事件之后，
+         弹出来的选择组件马上就隐藏了，此时click事件还在延迟的300ms之中，当300ms到来的时候，
+         click到的其实不是完成而是隐藏之后的下方的元素，
+         如果正下方的元素绑定的有click事件此时便会触发，
+
+         1\ouchstart->touchend->click。亦即click的触发是有延迟的，这个时间大概在300ms左右。
+         .on('touchstart',function(){
+         e.preventDefault();
+         })
+         2\引入fastclick.js，因为fastclick源码不依赖其他库所以你可以在原生的js前直接加上
+         3\用touchend代替tap事件并阻止掉touchend的默认行为preventDefault()
+         4\延迟一定的时间(300ms+)来处理事件
+
+         * */
+
+
+        $('#div2').on('tap',function(){
+            console.log('div2  tap');
+
+            $('#div2').hide();
+        });
+        $('#div1').on('click',function(){
+            console.log('div1  click');
+        })
+
+
+
+
+    </script>
+</body>
+</html>
