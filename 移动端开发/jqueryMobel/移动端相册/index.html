@@ -45,21 +45,39 @@
     <script>
 
         var html = '';
+        var iNow = 0;
         for(var i=0; i<24; i++){
             html+= ' <img src="img/thumbs/'+ (i+1)+'.jpg" />';
         }
         $('.container').append(html);
 
-        $('.container img').on('touchstart',function(e){
+
+        $('.container img').on('tap',function(e){
             var $index = $(this).index()+1;
             $('.big-img').show().css('background-image','url("img/'+ $index +'.jpg")');
+            iNow = $index;
 //            $('.container').hide();
+            e.preventDefault();
         });
-        $('.big-img').on('touchstart',function(e){
+        $('.big-img').on('tap',function(e){
             $('.big-img').hide();
-
-
+            e.preventDefault();
+        }).on('swipeleft',function(){
+            iNow++;
+            if(iNow >= 25){
+                iNow = 1;
+            }
+            $('.big-img').css('background-image','url("img/'+ iNow +'.jpg")');
+        }).on('swiperight',function(){
+            iNow--;
+            if(iNow <=0 ){
+                iNow = 24;
+            }
+            $('.big-img').css('background-image','url("img/'+ iNow +'.jpg")');
         });
+
+
+
 
 
 
