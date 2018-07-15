@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="../jquery-1.12.4.js"></script>
+    <script src="../jquery.mobile-1.4.5.js"></script>
+    <!--<link href="../jquery.mobile-1.4.5.min.css"/>-->
+    <link rel="stylesheet" href="../jquery.mobile-1.4.5.min.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            /*display: none;*/
+        }
+        .container img{
+            width:25%;
+            display: block;
+            float: left;
+            border:1px solid #000;
+            box-sizing: border-box;
+        }
+        .big-img{
+            position: fixed;
+            left:0;
+            top:0;
+            right: 0;
+            bottom:0;
+            background: #000000 url("img/1.jpg") center center no-repeat;
+            background-size: contain;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <div class="big-img">
+    </div>
+
+    <script>
+
+        var html = '';
+        for(var i=0; i<24; i++){
+            html+= ' <img src="img/thumbs/'+ (i+1)+'.jpg" />';
+        }
+        $('.container').append(html);
+
+        $('.container img').on('touchstart',function(e){
+            var $index = $(this).index()+1;
+            $('.big-img').show().css('background-image','url("img/'+ $index +'.jpg")');
+//            $('.container').hide();
+        });
+        $('.big-img').on('touchstart',function(e){
+            $('.big-img').hide();
+
+
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>

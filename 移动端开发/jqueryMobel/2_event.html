@@ -7,6 +7,7 @@
     <title></title>
     <script src="jquery-1.12.4.js"></script>
     <script src="jquery.mobile-1.4.5.js"></script>
+    <script src="fastclick.js"></script>
     <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
     <style>
 
@@ -28,8 +29,8 @@
 <body>
     <div id="div1">
     </div>
-    <div id="div2">
-    </div>
+  <!--  <div id="div2">
+    </div>-->
     <script>
         /*$('#div1').on('touchstart',function(){
             console.log('start');
@@ -56,7 +57,6 @@
         /*tap点透  上下两层 上边元素tap  点击隐藏
          如果下边的元素 有点击事件  a  input 都会触发
 
-
          原因:zepto的tap事件是通过兼听绑定在document上的touch事件来完成tap事件的模拟的，
          并且tap事件是冒泡到document上触发的！！！而在冒泡到document之前
          ，用户手的接触屏幕(touchstart)和离开屏幕(touchend)是会触发click事件的,
@@ -77,14 +77,42 @@
          * */
 
 
-        $('#div2').on('tap',function(){
+        /*$('#div2').on('touchend',function(e){
             console.log('div2  tap');
 
+
+
+            $('#div2').hide();
+
+            e.preventDefault();
+        });
+        $('#div1').on('click',function(){
+            console.log('div1  click');
+        })*/
+        /*FastClick.attach(document.body);
+
+
+        $('#div2').on('tap',function(e){
+            console.log('div2  tap');
             $('#div2').hide();
         });
         $('#div1').on('click',function(){
             console.log('div1  click');
+        })*/
+
+        $('#div1').on('swipeleft',function(){
+            console.log('left');
+        });
+
+        $('#div1').on('swiperight',function(){
+            console.log('right');
         })
+
+
+
+
+
+
 
 
 
