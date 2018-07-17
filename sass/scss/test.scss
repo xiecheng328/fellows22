@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import "common.scss";
+$color:#f00 !default;
+$a:'head';
+body{
+  //background: $color;
+}
+.#{$a}{
+  width: 200px;
+  height: 200px;
+}
+.head-logo{
+  width: 10px;
+  background: url("#{$a}.jpg");
+}
+.header{
+  width: 1210px;
+  margin:0 auto;
+  .logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    a{
+      text-decoration: none;
+      &:hover{
+        color: #f000f0;
+      }
+    }
+    a:hover{
+      color: #f000f0;
+    }
+  }
+  .search{
+
+  }
+}
+@mixin boder($col:#ccc){
+  border:2px solid $col;
+  box-shadow:0 0 3px 4px rgba(0,0,0,0.5);
+}
+.aa{
+  width: 200px;
+  height: 200px;
+  @include boder();
+}
+.bb{
+  width: 500px;
+  height: 20px;
+  @include boder(green);
+}
+
+.cc{
+  @include css3(border-radius,30px);
+}
+
+.arrow{
+  @include arrow(20px,green);
+}
+
+.dd{
+  width: 200px;
+  height: 200px;
+}
+.ff{
+  @extend .dd;
+  background: #ff0000;
+}
+
+%gg{
+  color: #000;
+  width: 200px;
+  height: 200px;
+}
+
+.hh{
+  font-size: abs(-30);
+  @extend %gg;
+}
+
+.ii{
+  @extend %gg;
+}
+a{
+  color: red;
+  &:hover{
+    color: lighten(red,20%);
+  }
+}
+
+/*aaaaaa*/
+//bbbb
+
+@function add($x,$y){
+  @return $x+$y;
+}
+
+.j{
+  width: add(3,5px);
+}
+
+

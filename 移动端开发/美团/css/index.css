@@ -39,3 +39,17 @@
     text-align: center;
     margin-top:0.05rem;
 }
+ul{
+    /*font-size: 0;*/
+    /*word-spacing: -0.5em;*/
+}
+li{
+
+    width: 20%;
+    /*font-size: 20px;*/
+    display: inline-block;
+    height: 100px;
+    background: #ff0000;
+    box-sizing: border-box;
+    /*vertical-align: top;*/
+}
