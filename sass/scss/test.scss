@@ -54,7 +54,7 @@ body{
 }
 
 .arrow{
-  @include arrow(20px,green);
+  @include arrow(20px,green,bottom);
 }
 
 .dd{
@@ -95,7 +95,20 @@ a{
 }
 
 .j{
-  width: add(3,5px);
+  width:(6px/2);
 }
 
+@for $i from 1 through 5{
+  .item#{$i}{
+    width: 20px*$i;
+  }
+}
+
+$j:5;
+@while($j<10){
+  .a#{$j}{
+    width: 20*$j;
+  }
+  $j:$j+2;
+}
 
