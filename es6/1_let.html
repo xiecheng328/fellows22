@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.let 没有变量提升
+       /*  console.log(a);
+        var a = 5;
+        //变量提升  
+
+        var a;
+        console.log(a);
+        var a = 5;
+
+        
+        console.log(b);
+        let b = 5;
+        
+        aa();
+
+        function aa(){
+            console.log('1111');
+        }
+
+        console.log(bb);
+
+        bb();
+
+        var bb = function(){
+            console.log(2222);
+        } */
+        // 2.let 不能重复声明
+
+        /* let a = 5;
+        let a = 6;
+
+        console.log(a); */
+        // 
+
+         //let 暂时性死区 （在当前作用域中不允许同名的变量进来 ）
+       /*  var a = 10;
+
+        function aa(){
+            console.log(a);
+            var a = 20;
+        }
+        aa(); */
+
+        let b = 10;
+
+        function bb(){
+            
+            console.log(b);
+
+            let b = 20;
+        }
+        bb();
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    </script>
+    
+   
+
+
+
+</body>
+</html>
