@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>aaa</li>
+        <li>bbbb</li>
+        <li>ccc</li>
+        <li>dddd</li>
+    </ul>
+    
+
+    <script>
+        var aLi = document.querySelectorAll('li');
+
+        /* for(var i=0; i<aLi.length ;i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                console.log(this.index); 
+            }
+        } */
+
+        /*      
+         闭包 
+        外部函数中有内部函数，内部函数引用外部函数中的变量，
+        这样变量不释放 一直保存，这样形成闭包
+
+        缺点 内存泄漏
+        */
+        /* for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);  //i = 4 
+            }
+        }
+        for(var i=0; i<aLi.length; i++){
+
+            (function(idx){
+                aLi[i].onclick = function(){
+                    console.log(idx);
+                }
+            })(i)  //函数的立即调用 
+        } */
+        //4.块级作用域
+       /*  for(let i=0; i<4; i++){
+            console.log(i);
+        }
+
+        if(true){
+            let x = 'a';
+        }
+        
+        console.log(x); */
+        // console.log(i);
+
+
+        for(let i=0; i<aLi.length; i++){
+
+            aLi[i].onclick = function(){
+                console.log(i);  
+            }
+        }
+
+        
+
+
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>
