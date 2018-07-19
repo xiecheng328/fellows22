@@ -24,12 +24,39 @@
         }
         console.log(  aa(a) ); */
 
-        let arr1 = [1,2,3,3,4];
+       /*  let arr1 = [1,2,3,3,4];
         let arr2 = new Set(arr1);
         // let result = [...arr2];
         let result = Array.from(arr2);
         
         console.log(arr2);
+ */
+
+        let arr1 = [1,2,3,3,4];
+        let arr2 = new Set(arr1);
+
+        arr2.add(8);
+        arr2.delete(3);
+
+        console.log( arr2.has(1) );
+        console.log(arr2);
+
+
+        var a = new WeakSet();
+        a.add({name:'zs'});
+        a.add({
+            age:30
+        })
+
+        console.log(a);
+
+
+
+
+
+
+        
+
 
 
 
