@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+       /*  //模板字符串  `  ${变量} `    支持标签、换行  数学运算
+
+
+        var a = 3;
+        var b = 5;
+
+        console.log(    a +" +"+ b +" = " +(a+b)     );
+
+
+        console.log(   `vhgdsf${a}uyds${b}gfuy`     );
+
+        console.log(   `${a} + ${b} = ${a+b}`   ); */
+
+
+        /* var str = 'abcdef';
+
+        console.log( str.indexOf('b') );
+
+
+        console.log(   str.includes('g')  );
+
+        console.log(   str.startsWith('bc')  ); */
+
+       /*  function sw(longStr,str){
+            if(longStr.indexOf(str) == 0){
+                return true;
+            }
+            return false;
+        }
+
+        console.log(  sw('hello world', 'ello')  ); */
+
+
+      /*   String.prototype.sw = function(str){
+            if( this.indexOf(str) == 0){
+                return true;
+            }
+            return false;
+        }
+        var str = 'hello world';
+
+        console.log(   str.sw('dfghj')   );
+        */
+        String.prototype.ew = function(str){
+            if( this.lastIndexOf(str) + str.length  ==  this.length){
+                return true;
+            }
+            return false;
+        }
+        
+        var str1 = 'abcefugu';
+
+        console.log(   str1.ew('fugu')  );
+        // console.log(  str1.ew('i')  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>
