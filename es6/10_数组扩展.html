@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        
+       /* 
+       Array.from()  类数组转化成 数组
+        var aLi = document.querySelectorAll('li');
+
+        console.log(aLi);
+        //扩展运算符
+        var arr = [...aLi];
+
+        var arr2 = Array.from(aLi);
+
+        console.log(arr2); */
+
+        /* //Array.of(3)  
+        var arr = new Array(4);
+        console.log(arr);
+        var arr1 = Array.of(4);
+        console.log(arr1); */
+
+
+        var arr = [ 1, 2, 3, 4, 5 ,6 , 7];
+        // console.log(  arr.copyWithin(2,3,6) );
+
+        // [1, 2, 4, 4, 5, 6, 7]
+
+
+       /*  var result = arr.find(function(val, index, arr){
+            return val > 4;
+        }) */
+
+        /* var result = arr.findIndex(function(val, index, arr){
+            return val > 4;
+        })
+
+        console.log(result); */
+
+       /*  var arr = [1,2,3,4,5,6,7];
+
+        console.log( arr.fill('xx',2,5) );
+
+
+        var arr = (new Array(5)).fill('a');
+
+        console.log(arr); */
+
+
+        var arr1 = ['a','b','c','d','e','f'];
+
+        for( a of arr1){
+           console.log(a);
+        }
+
+       /* for( a of arr1.keys()){
+           console.log(a);
+       } */
+
+        for( [key,val] of arr1.entries()){
+           console.log(key,val);
+        }
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+    </script>
+    
+    
+</body>
+</html>

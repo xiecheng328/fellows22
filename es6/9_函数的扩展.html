@@ -57,10 +57,9 @@
                 },200)
             }
         } */
-        // 函数中this 执行时的this  箭头函数中this 声明时
-
+        // 函数中this 执行时的this  箭头函数中this 声明时的this
         //到父作用域找 
-        var aLi = document.querySelectorAll('li');
+        /* var aLi = document.querySelectorAll('li');
 
         for(var i=0; i<aLi.length; i++){
             aLi[i].onclick = function(){
@@ -68,7 +67,50 @@
                     console.log(this); 
                 },200)
             }
+        } */
+        /* var person = {
+            name:"zs",
+            age:10,
+            say:function(){
+                aa = () => {
+                    setTimeout(() => {
+                        console.log(this);
+                    },1000);  
+                }
+                aa();
+            }
         }
+        person.say(); */
+        //不能用于构造函数 
+        /* Person = (name,age) => {
+            this.name = name;
+            this.age = age;
+        }
+        var person1 = new Person('zs',20); */
+        //在箭头函数不允许使用arguments
+        let aa = (...rest) => {
+            // console.log(  arguments  );
+            console.log(rest);
+        }
+        aa(1,2,3,4);
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
