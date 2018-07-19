@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+    
+    <script>
+        // 默认值 undefined 时  使用默认值
+        /* function aa([x,y=5]){
+
+            console.log(y);
+            // return x+y;
+        }
+        console.log( aa([3,0]) );
+
+
+        console.log( aa.length );
+
+        console.log( aa.name ); */
+
+
+        //箭头函数
+
+
+       /*  function aa(){
+
+        }
+
+        let aa = function(){
+            
+        }
+
+
+        let aa = () => {
+
+        }
+ */
+
+
+        /* var aLi = document.querySelectorAll('li');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                var _this = this;
+                setTimeout(function(){
+                    console.log(_this); 
+                },200)
+            }
+        } */
+        // 函数中this 执行时的this  箭头函数中this 声明时
+
+        //到父作用域找 
+        var aLi = document.querySelectorAll('li');
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                setTimeout(() => {
+                    console.log(this); 
+                },200)
+            }
+        }
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
