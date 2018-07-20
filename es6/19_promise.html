@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    
+    <script>
+       /*  $.get('a.json',function(data){
+            if(data.status == 1){
+                $.get('b.json',function(data){
+                    //ghjkl;
+                    
+                })
+            }else{
+
+            }
+        }) */
+
+
+        /* var p1 = new Promise(function(resolve,reject){
+            $.get('a.json',function(data){
+                if(data.status == 1){
+                    resolve();
+                }else{
+                    reject();
+                }
+            })
+        }).then(function(){
+            //再发请求
+            console.log('okok');
+        }).catch(function(){
+            console.log('nonono');
+        }); */
+
+       
+        let p1 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p1 ok');
+                resolve();
+            },1000);
+        });
+        let p2 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p2 ok');
+                reject();
+            },1500);
+        }); 
+        let p3 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p3 ok');
+                // resolve();
+                reject();
+            },800);
+        });  
+
+        /* Promise.all([p1,p2,p3]).then(function(){
+            console.log('1111'); 
+        },function(){
+            console.log('0000');
+        });   */
+
+        Promise.race([p1,p2,p3]).then(function(){
+            console.log('1111'); 
+        },function(){
+            console.log('0000');
+        });    
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    </script>
+</body>
+</html>
