@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log( this.name +" is say....");
+        }
+        var person1 = new Person('zs',20);//实例化对象
+        // person1.say();
+        //原型继承 
+        //子类构造函数中 .call() 继承属性 
+        //子类的prototype对象 = 父类的实例化对象 继承方法
+        function Coder(name,age){
+            Person.call(this,name,age);//Person(父类) .call()  继承属性
+        }
+        //子类的prototype对象 = 父类的实例化对象
+        Coder.prototype = new Person();
+
+        var coder1 = new Coder('zxs',18);
+        coder1.say();
+
+        console.log(coder1);
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>

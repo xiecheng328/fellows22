@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51272393-2da6-4caa-a166-d96ba6b70439" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es6/18_ajax_jq.html" afterPath="$PROJECT_DIR$/es6/18_ajax_jq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es6/19_promise.html" afterPath="$PROJECT_DIR$/es6/19_promise.html" />
     </list>
     <ignored path="fellows22.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,6 +63,7 @@
       <list>
         <option value="$PROJECT_DIR$/es6/17_ajax.html" />
         <option value="$PROJECT_DIR$/es6/18_ajax_jq.html" />
+        <option value="$PROJECT_DIR$/es6/19_promise.html" />
       </list>
     </option>
   </component>

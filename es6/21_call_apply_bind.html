@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <script>
+        /* function fn(num1,num2){
+            console.log(num1,num2);
+            console.log(this);
+        }
+        var person1 = {
+            name:'zs',
+            age:20
+        }
+        // fn();
+
+        fn.call(person1,1,2);
+        fn.apply(person1,[1,2]); 
+        fn.bind(person1,1,2); */
+
+        var aLi = document.querySelectorAll('li');
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                setTimeout(function(){
+                    console.log( this );
+                }.bind(this),1000);
+            }
+        }
+
+
+
+
+
+
+    </script>
+   
+    
+</body>
+</html>
