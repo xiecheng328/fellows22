@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let fn = function(a){
+            console.log('fn...')
+        }
+        var pro = new Proxy(fn,{
+            apply(){
+                console.log('apply .. 调用');
+                console.log('fn 将要被调用');
+
+                Reflect.apply(...arguments);
+            }
+        });
+        pro(1);
+
+
+        let fn = function(){
+            console.log('登录出来...');
+        }
+        var pro = new Proxy(fn,{
+            apply(){
+                if(用户没有登录){
+                    Reflect.apply(...arguments); //调用fn
+                }
+            }
+        })
+        pro();
+
+
+
+
+
+
+    
+    
+    
+    </script>
+
+    
+</body>
+</html>

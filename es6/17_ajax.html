@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click获取</button>
+    <div id="div1">
+
+    </div>
+
+    <script>
+
+        var oBtn = document.querySelector('#btn');
+        var oDiv = document.querySelector('#div1');
+        oBtn.onclick = function(){
+
+             //1、创建xmlHtppRequest 对象
+            var xmlhttp;
+            if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp=new XMLHttpRequest();
+            }else{// code for IE6, IE5
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            //2、向服务器发送请求
+
+            //get
+            xmlhttp.open("GET","test.json?name=xx",true);
+            xmlhttp.send(); 
+
+            //post
+
+            xmlhttp.open("POST","test.json",true);
+            xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xmlhttp.send("name=xx");
+
+            //3、服务器响应
+            xmlhttp.onreadystatechange=function(){
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    //操作页面 更改想要更新
+                    console.log(typeof xmlhttp.responseText);
+                    var obj = JSON.parse(xmlhttp.responseText)
+                    oDiv.innerHTML = obj.result;
+                }
+            }
+        }
+
+
+        /* 
+        readyState
+        存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+
+        0: 请求未初始化
+        1: 服务器连接已建立
+        2: 请求已接收
+        3: 请求处理中
+        4: 请求已完成，且响应已就绪
+        
+
+        状态码：status
+        
+        200 服务器成功返回
+        301 永久重定向
+        302 临时重定向
+        404 资源找不到
+        500 服务器错误
+        304 缓存
+        
+        
+         */
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /*  get post请求区别
+        他是http请求方式的两种，
+            get是请求  post是提交
+            get(ie2-4k)数据量小，，post很大 
+            get是在请求头里，放在地址栏不安全，post是在包体里，相对安全
+            get可以缓存，post不能
+         */
+
+
+    
+    
+    
+    </script>
+    
+</body>
+</html>
