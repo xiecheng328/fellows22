@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="val in arr">  {{val}} </li>
+        </ul>
+        <h2 v-for="(val,key) in obj">{{key}} : {{val}}</h2>
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3,4,5],
+                obj:{
+                    name:'zs',
+                    age:20,
+                    school:'weichuang'
+                }
+            }
+        });
+        
+    
+    
+    
+    </script>
+    
+</body>
+</html>

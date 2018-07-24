@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        asdujtfuydgfuyg
+        {{msg}} {{aa}}
+    </div>
+    <div id="app2">
+        <h3>
+            {{test}}
+        </h3>
+        {{test}}
+    </div>
+    {{test}}
+    <script src="vue.js"></script>
+    <script>
+        let vm1 = new Vue({
+            el:"#app",
+            data:{
+                msg:'我是msg',
+                aa:'aaa'
+            }
+        });
+
+        let vm2 = new Vue({
+            el:"#app2",
+            data:{
+                test:'abc'
+            }
+        });
+
+
+
+
+
+
+
+
+    
+    </script>
+    
+</body>
+</html>
