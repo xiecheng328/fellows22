@@ -24,7 +24,6 @@
                 {{msg}}
             </h2>
         <h2 id="msg"></h2>
-
         <p :class="{aa:isA,bb:isB}" @click="change()">fytghgf</p>
     </div>
     <script src="vue.js"></script>
@@ -35,8 +34,7 @@
                 msg:'aaa',
                 isA:false,
                 isB:true
-            }
-            ,methods:{
+            } ,methods:{
                 change(){
                     // if(isA){
                         this.isA = !this.isA;
