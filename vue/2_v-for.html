@@ -8,13 +8,16 @@
 </head>
 <body>
     <div id="app">
-        <ul>
+      <!--   <ul>
             <li v-for="val in arr">  {{val}} </li>
         </ul>
         <h2 v-for="(val,key) in obj">{{key}} : {{val}}</h2>
+
+        <div v-text="msg"></div>
+        <div v-html="msg"></div> -->
+        <button @click = "show(2,$event)">click</button>
+        <div>{{num}}</div>
     </div>
-
-
     <script src="vue.js"></script>
     <script>
         var vm = new Vue({
@@ -25,6 +28,15 @@
                     name:'zs',
                     age:20,
                     school:'weichuang'
+                },
+                msg:'aaa',
+                num:0
+            },
+            methods:{
+                show(x,e){
+                    console.log(e);
+                    // event
+                    this.num += x;
                 }
             }
         });
