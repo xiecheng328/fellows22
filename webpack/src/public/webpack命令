@@ -1,0 +1,27 @@
+1、cd webpack 
+2、npm init (name 不能叫webpack 会生成一个package.json)
+3、sudo npm install webpack webpack-cli -D   安装webpack webpack-cli
+
+4、package.js script -> "build":"webpack"   ->  npm run build
+5、sudo npm install webpack-dev-server -D   (服务与热更新)
+
+6、sudo npm install html-webpack-plugin -D   （html打包）
+7、sudo npm install css-loader style-loader -D   
+
+8、sudo npm install -D extract-text-webpack-plugin@next
+
+9、sudo npm install file-loader url-loader -D
+
+10、npm install html-withimg-loader -D
+
+11、npm install --save-dev postcss-loader autoprefixer
+
+
+
+
+npm cache clean --force  清缓存
+
+
+
+
+--save-dev  -D

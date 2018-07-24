@@ -1,0 +1,7 @@
+body{
+    background: green url(../images/bbb.jpg) center center no-repeat;
+    border-radius: 5px;
+    /* display: flex; */
+
+    transform: rotate(30deg);
+}
