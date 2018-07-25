@@ -45,7 +45,7 @@
             <input type="text" id="proName" placeholder="请输入产品名">
             <label for="proPrice">价格</label>
             <input type="text" id="proPrice" placeholder="请输入产品价格">
-            <button>添加</button>
+            <button class="add">添加</button>
         </div>
         <div>
             <input type="text" placeholder="请输入搜索内容">
@@ -58,7 +58,7 @@
         <div>
             <button>删除选中</button>
             总价
-            <span>555</span>
+            <span class="total_price">0</span>
         </div>
     </div>
 
@@ -93,11 +93,45 @@
             </li>`;
             $('ul').append(html);   
         }
-
-        $('li').on('click',function(){
-            $(this).addClass('selected');
+        // let flag = true;//没有被点击 
+        $('ul').on('click','li',function(){
+            var total = 0;
+            if($(this).hasClass('selected')){//移除样式
+                $(this).removeClass('selected');
+                total = $('.total_price').html()*1 - $(this).find('.price').html()*1;
+            }else{
+                $(this).addClass('selected');
+                total = $('.total_price').html()*1 + $(this).find('.price').html()*1;
+            }
+            $('.total_price').html(total);
+        });
+        $('.add').on('click',function(){
+            proList.push({
+                name:$('#proName').val(),
+                price:$('#proPrice').val(),
+            });
+            var html = `<li>
+                <input type="checkbox">
+                <span>${$('#proName').val()}</span>
+                <span class="close">[X]</span>
+                <span class="price">${$('#proPrice').val()}</span>
+            </li>`;
+            $('ul').append(html);  
         });
 
+        
+
+
+
+
+
+
+
+
+
+
+
+        
 
 
 
