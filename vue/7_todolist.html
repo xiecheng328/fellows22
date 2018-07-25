@@ -42,19 +42,17 @@
         <hr>
         <div>
             <label for="proName">名称</label>
-            <input type="text" id="proName" placeholder="请输入产品名">
+            <input type="text" id="proName" placeholder="请输入产品名" v-model="name">
             <label for="proPrice">价格</label>
-            <input type="text" id="proPrice" placeholder="请输入产品价格">
-            <button class="add">添加</button>
+            <input type="text" id="proPrice" placeholder="请输入产品价格" v-model="price">
+            <button class="add" @click="add()">添加</button>
         </div>
         <div>
             <input type="text" class="search-val" placeholder="请输入搜索内容">
             <button class="search">搜索</button>
         </div>
         <ul>
-            <li v-for="product in proList" 
-            @click="change(product)" 
-            :class="{selected:product.isSelect}">
+            <li v-for="product in proList" @click= "change(product)" :class="{selected:product.isSelect}">
                 <input type="checkbox">
                 <span>{{product.name}}</span>
                 <span class="close">[X]</span>
@@ -69,7 +67,7 @@
     </div>
     <script src="vue.js"></script>
     <script>
-        new Vue({
+        let vm = new Vue({
             el:'#container',
             data:{
                 proList : [
@@ -93,11 +91,23 @@
                         price:6666,
                         isSelect:false
                     }
-                ]
+                ],
+                name:'',
+                price:'',
             },
             methods:{
                 change(product){
-                    product.isSelect = true;
+                    product.isSelect = !product.isSelect;
+                },
+                add(){
+                    // console.log( this.name,this.price );
+                    this.proList.push({
+                        name:this.name,
+                        price:this.price,
+                        isSelect:false
+                    });
+                    this.name = '';
+                    this.price = '';
                 }
             }
 
