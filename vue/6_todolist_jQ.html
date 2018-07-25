@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 400px;
+            margin:50px auto;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            background: #cccccc;
+            padding: 0 10px;
+            margin-bottom:10px;
+        }
+        .price,.close{
+            float:right;
+        }
+        .close{
+            margin-left:10px;
+            color: red;
+        }
+        .selected{
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>todolist</h1>
+        <hr>
+        <div>
+            <label for="proName">名称</label>
+            <input type="text" id="proName" placeholder="请输入产品名">
+            <label for="proPrice">价格</label>
+            <input type="text" id="proPrice" placeholder="请输入产品价格">
+            <button>添加</button>
+        </div>
+        <div>
+            <input type="text" placeholder="请输入搜索内容">
+            <button>搜索</button>
+        </div>
+        <ul>
+           
+        </ul>
+
+        <div>
+            <button>删除选中</button>
+            总价
+            <span>555</span>
+        </div>
+    </div>
+
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+
+        let proList = [
+            {
+                name:'裤子',
+                price:11
+            },
+            {
+                name:'衣服',
+                price:22
+            },
+            {
+                name:'电脑',
+                price:3333
+            },
+            {
+                name:'iphoneX',
+                price:6666
+            }
+        ];
+        /*  初始化 商品列表*/
+        for(var i=0; i<proList.length; i++){
+            var html = `<li>
+                <input type="checkbox">
+                <span>${proList[i].name}</span>
+                <span class="close">[X]</span>
+                <span class="price">${proList[i].price}</span>
+            </li>`;
+            $('ul').append(html);   
+        }
+
+        $('li').on('click',function(){
+            $(this).addClass('selected');
+        });
+
+
+
+
+
+        
+
+            
+
+
+
+    
+        
+    
+    
+    </script>
+
+</body>
+</html>
