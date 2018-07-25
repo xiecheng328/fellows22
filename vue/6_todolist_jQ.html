@@ -140,7 +140,7 @@
             var count = 0;
             $(':visible:checked').each(function(){
                 count += $(this).siblings('.price').html()*1
-            })
+            });
             $('.total_price').html(count);
         }
 
