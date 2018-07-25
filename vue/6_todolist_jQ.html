@@ -95,15 +95,12 @@
         }
         // let flag = true;//没有被点击 
         $('ul').on('click','li',function(){
-            var total = 0;
             if($(this).hasClass('selected')){//移除样式
                 $(this).removeClass('selected');
-                total = $('.total_price').html()*1 - $(this).find('.price').html()*1;
             }else{
                 $(this).addClass('selected');
-                total = $('.total_price').html()*1 + $(this).find('.price').html()*1;
             }
-            $('.total_price').html(total);
+            total();
         });
         $('.add').on('click',function(){
             proList.push({
@@ -130,16 +127,24 @@
                 proList.splice(index,1);
                 //把页面中li remove
                 $('li').eq(index).remove();
-                $('.total_price').html(0);
             }
-            // console.log(proList);
+            total();
         });
         $('.search').on('click',function(){
             var val = $('.search-val').val();
             $('li:contains('+val+')')
             .show().siblings().hide();
-            // $('li:contains('+$('.search-val').val()+')').show().siblings().hide();
+            total();
         });
+        function total(){
+            var count = 0;
+            $(':visible:checked').each(function(){
+                count += $(this).siblings('.price').html()*1
+            })
+            $('.total_price').html(count);
+        }
+
+
 
 
 
