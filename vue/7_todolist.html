@@ -52,8 +52,8 @@
             <button class="search">搜索</button>
         </div>
         <ul>
-            <li v-for="product in proList" @click= "change(product)" :class="{selected:product.isSelect}">
-                <input type="checkbox">
+            <li v-for="(product,index) in proList" @click= "change(product,index)" :class="{selected:product.isSelect}">
+                <input type="checkbox" v-model="checke" :value="index">
                 <span>{{product.name}}</span>
                 <span class="close">[X]</span>
                 <span class="price">{{product.price}}</span>
@@ -94,10 +94,18 @@
                 ],
                 name:'',
                 price:'',
+                checke:[]
             },
             methods:{
-                change(product){
+                change(product,idx){
+                    if(product.isSelect){//当前粉色  需要从数组移除
+                        // var index = this.checke.indexOf(idx) ;
+                        this.checke.splice(this.checke.indexOf(idx),1);
+                    }else{//当前灰色 需要push到数组
+                        this.checke.push(idx);
+                    }
                     product.isSelect = !product.isSelect;
+                    
                 },
                 add(){
                     // console.log( this.name,this.price );
@@ -108,6 +116,8 @@
                     });
                     this.name = '';
                     this.price = '';
+
+                   
                 }
             }
 
