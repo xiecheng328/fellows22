@@ -48,15 +48,15 @@
             <button class="add">添加</button>
         </div>
         <div>
-            <input type="text" placeholder="请输入搜索内容">
-            <button>搜索</button>
+            <input type="text" class="search-val" placeholder="请输入搜索内容">
+            <button class="search">搜索</button>
         </div>
         <ul>
            
         </ul>
 
         <div>
-            <button>删除选中</button>
+            <button class="del">删除选中</button>
             总价
             <span class="total_price">0</span>
         </div>
@@ -119,7 +119,39 @@
             $('ul').append(html);  
         });
 
+        $('.del').on('click',function(){
+            //删除数组中商品
+            $checked = $('input:checked'); 
+            //循环所有被选中的元素
+            for(var i=$checked.length-1; i>=0; i--){
+                //找到每一个被选中的元素的索引
+                var index = $checked.eq(i).index('input:checkbox');
+                //删除数组中索引对应的元素
+                proList.splice(index,1);
+                //把页面中li remove
+                $('li').eq(index).remove();
+                $('.total_price').html(0);
+            }
+            // console.log(proList);
+        });
+        $('.search').on('click',function(){
+            var val = $('.search-val').val();
+            $('li:contains('+val+')')
+            .show().siblings().hide();
+            // $('li:contains('+$('.search-val').val()+')').show().siblings().hide();
+        });
+
+
+
+
+
+
+
+
+
         
+
+
 
 
 
