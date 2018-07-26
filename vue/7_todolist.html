@@ -62,7 +62,7 @@
         <div>
             <button class="del">删除选中</button>
             总价
-            <span class="total_price">0</span>
+            <span class="total_price">{{sum()}}</span>
         </div>
     </div>
     <script src="vue.js"></script>
@@ -105,7 +105,6 @@
                         this.checke.push(idx);
                     }
                     product.isSelect = !product.isSelect;
-                    
                 },
                 add(){
                     // console.log( this.name,this.price );
@@ -116,8 +115,15 @@
                     });
                     this.name = '';
                     this.price = '';
-
-                   
+                },
+                sum(){
+                    var totalPrice = 0;
+                    this.proList.forEach(function(pro,idx){
+                        if(pro.isSelect){
+                            totalPrice += pro.price;
+                        }
+                    });
+                    return totalPrice;
                 }
             }
 
