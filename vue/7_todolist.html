@@ -48,8 +48,8 @@
             <button class="add" @click="add()">添加</button>
         </div>
         <div>
-            <input type="text" class="search-val" placeholder="请输入搜索内容">
-            <button class="search">搜索</button>
+            <input type="text" class="search-val" v-model="searchVal" placeholder="请输入搜索内容">
+            <button class="search" @click="search()">搜索</button>
         </div>
         <ul>
             <li v-for="(product,index) in proList" @click= "change(product,index)" :class="{selected:product.isSelect}">
@@ -60,7 +60,7 @@
             </li>
         </ul>
         <div>
-            <button class="del">删除选中</button>
+            <button class="del" @click="del()">删除选中</button>
             总价
             <span class="total_price">{{sum()}}</span>
         </div>
@@ -94,16 +94,18 @@
                 ],
                 name:'',
                 price:'',
-                checke:[]
+                checke:[],
+                searchVal:''
             },
             methods:{
                 change(product,idx){
-                    if(product.isSelect){//当前粉色  需要从数组移除
-                        // var index = this.checke.indexOf(idx) ;
+                    if(product.isSelect){//当前粉色  需要从数组移除 checkbox取消勾选
+                        // var index = this.checke.indexOf(idx) ; 
                         this.checke.splice(this.checke.indexOf(idx),1);
-                    }else{//当前灰色 需要push到数组
+                    }else{//当前灰色 需要push到数组  checkbox 勾选
                         this.checke.push(idx);
                     }
+                    //给li添加或者移除样式
                     product.isSelect = !product.isSelect;
                 },
                 add(){
@@ -113,6 +115,7 @@
                         price:this.price,
                         isSelect:false
                     });
+                    //添加后清空输入框的文字
                     this.name = '';
                     this.price = '';
                 },
@@ -120,13 +123,30 @@
                     var totalPrice = 0;
                     this.proList.forEach(function(pro,idx){
                         if(pro.isSelect){
-                            totalPrice += pro.price;
+                            totalPrice += pro.price*1;
                         }
                     });
                     return totalPrice;
+                },
+                del(){
+                    //过滤出所有没有被勾选的商品
+                    let newPro = this.proList.filter(function(product){
+                        return (product.isSelect != true);
+                    });
+                    //讲所有没被勾选的商品赋值给proList 页面显示所有没被勾选的
+                    this.proList = newPro;
+                    //清空选中checkbox
+                    this.checke = [];
+                },
+                search(){
+                    // this.searchVal
+                    let newPro = this.proList.filter((product) => {
+                    
+                        return product.name.includes(this.searchVal);
+                    });
+                    this.proList = newPro;
                 }
             }
-
         });
     
     
