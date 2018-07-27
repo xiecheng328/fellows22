@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+        <!-- <weichuang></weichuang>
+        <weichuang></weichuang> -->
+        <demo></demo>
+    </div>
+    <div id="app2">
+        <demo title="标题111" content="内容111">
+            <div slot="slot1">
+                <h3>内容111</h3>
+                <h4>内容111</h4>
+                <h5>内容111</h5>
+            </div>
+            <div slot="slot2">
+                <h3>footer111</h3>
+                <h4>footer111</h4>
+                <h5>footer111</h5>
+            </div>
+        </demo>
+        <!-- <demo title="2222" content="内容222"></demo> -->
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/x-template" id="temp">
+        <div>
+            <h2>{{title}}</h2>
+            <p>
+                <slot name="slot1">
+                    <h1>我是默认值</h1>
+                </slot>
+            </p>
+            <div>
+                <slot name="slot2">
+                    <h1>footer默认值</h1>
+                </slot>
+            </div>
+        </div>
+    </script>
+    <script>
+        /* Vue.component('weichuang',{
+            template:'<div><h2>标题</h2><p>文字</p></div>'
+        }); */
+        var vm =  new Vue({
+            el:"#app2",
+            data:{
+            },
+            components:{
+                demo:{
+                    template:'#temp',
+                    props:['title','content'] //父组件到子组件传值用props
+                }
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
