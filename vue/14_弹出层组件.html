@@ -29,20 +29,32 @@
 </head>
 <body>
     <div id="app">
+        {{msg}}
         <button @click="showRegister = true;showLogin = false;">注册</button>
-        <button @click="showLogin = true; showRegister = flase;">登录</button>
-        <my-dialog v-if="showLogin"></my-dialog>
-        <my-dialog v-if="showRegister"></my-dialog>
+        <button @click="showLogin = true; showRegister = false;">登录</button>
+        <!-- 登录 -->
+        <my-dialog title="登录" v-if="showLogin" @close="fn">
+            用户名：<input type="text"></br>
+            密码：<input type="text"> </br>
+            <button>登录</button>
+        </my-dialog>  
+        <!-- 注册 -->
+        <my-dialog title="注册"  v-if="showRegister">
+            用户名：<input type="text"></br>
+            密码：<input type="text"> </br>
+            确认密码：<input type="text"> </br>
+            <button>注册</button>
+        </my-dialog>
     </div>
     <script src="vue.js"></script>
     <script type="text/x-template" id="temp">
         <div class="dialog">
             <div class="title">
-                <span>标题</span>
-                <span class="close">X</span>
+                <span>{{title}}</span>
+                <span class="close" @click="$emit('close','aaaa')">X</span>
             </div>
             <div class="content">
-                内容
+                <slot></slot>
             </div>
         </div>
     </script>
@@ -51,11 +63,19 @@
             el:"#app",
             data:{
                 showLogin:false,
-                showRegister:false
+                showRegister:false,
+                msg:''
+            },
+            methods: {
+                fn(val){ //val子组件传过来的参数
+                    console.log(val);
+                    this.msg = val;
+                }
             },
             components: {
                 myDialog:{
-                    template:"#temp"
+                    template:"#temp",
+                    props: ['title']
                 }
             }
         });
