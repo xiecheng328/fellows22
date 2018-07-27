@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+
+
+    <script src="vue.js"></script>
+
+    <script>
+    
+        var vm =  new Vue({
+            el:"#app",
+            data:{
+                msg:'aaa'
+            },
+            beforeCreate() {//
+                console.log('beforeCreate...');
+                console.log(this.$data);
+            },
+            created() {
+                console.log('created...');
+                console.log(this.$data,this.$el);
+            },
+            beforeMount() {
+                console.log('beforeMount...');
+                console.log(this.$el);
+            },
+            mounted () {
+                console.log('mounted...');
+                console.log(this.$el);
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate...');
+                console.log(this.msg);
+            },
+            updated() {
+                console.log('updated...');
+                console.log(this.msg);
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy...');
+            },
+            destroyed () {
+                //vm.$destory() 进行销毁
+                console.log('destroyed...');
+            }
+        });
+    
+    </script>
+</body>
+</html>
