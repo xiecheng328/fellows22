@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .dialog{
+            width: 400px;
+            height: 400px;
+            background: #cccccc;
+            border:1px solid #000;
+        }
+        .title{
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #000;
+        }
+        .close{
+            float:right;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="showRegister = true;showLogin = false;">注册</button>
+        <button @click="showLogin = true; showRegister = flase;">登录</button>
+        <my-dialog v-if="showLogin"></my-dialog>
+        <my-dialog v-if="showRegister"></my-dialog>
+    </div>
+    <script src="vue.js"></script>
+    <script type="text/x-template" id="temp">
+        <div class="dialog">
+            <div class="title">
+                <span>标题</span>
+                <span class="close">X</span>
+            </div>
+            <div class="content">
+                内容
+            </div>
+        </div>
+    </script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                showLogin:false,
+                showRegister:false
+            },
+            components: {
+                myDialog:{
+                    template:"#temp"
+                }
+            }
+        });
+    
+    </script>
+
+
+
+
+
+    
+</body>
+</html>
