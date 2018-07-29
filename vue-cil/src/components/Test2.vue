@@ -1,12 +1,9 @@
 <template>
     <div>
-       
+        test2
 
-        <h2>这是我的首页 </h2>
-
-
-        
-
+        {{$route.params.username}}
+        {{$route.params.userid}}
     </div>
 </template>
 
