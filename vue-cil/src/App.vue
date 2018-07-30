@@ -4,7 +4,7 @@
       <button @click="goHome()">首页</button>
       <button @click="goBack()">&lt;返回</button>
       <button @click="goNext()">&gt;下一页</button>
-    </br>
+    <!-- </br> -->
 <!--     <router-link to="/index">首页</router-link>
     <router-link to="/list">列表页</router-link>
     <router-link to="/url/zs/20">url传参</router-link>
