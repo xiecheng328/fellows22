@@ -1,19 +1,19 @@
 <template>
     <div>
         <ul class="footer" :style="{'background':bg}">
-            <li>电影</li>
-            <li>音乐</li>
-            <li>书籍</li>
-            <li>图片</li>
+            <li @click="$emit('change','red')"><router-link to="/movie/movieList">电影</router-link></li>
+            <li @click="$emit('change','green')"><router-link to="/music/musicList">音乐</router-link></li>
+            <li><router-link to="">书籍</router-link></li>
+            <li><router-link to="">图片</router-link></li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        props:['bg']
-       
-        
+        props:['bg'],
+        methods:{
+        }
     }
 </script>
 

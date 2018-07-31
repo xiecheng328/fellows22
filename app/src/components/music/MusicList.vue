@@ -1,12 +1,12 @@
 <template>
     <div>
-        电影列表、。。。。
+        音乐列表。。。。
     </div>
 </template>
 
 <script>
     export default {
-       
+        
     }
 </script>
 
