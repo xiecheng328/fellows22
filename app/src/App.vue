@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <common-header :bg="bgColor" title="movie" ></common-header>
         <router-view/>
     <common-footer :bg="bgColor" @change="fn"></common-footer>
@@ -25,9 +26,25 @@ export default {
       console.log(color);
       // this.bg = color;
       this.bgColor = color;
-
     }
+  },
+  created () {
+    let url = this.$route.path; //    /music/musicList
+    let str = url.split('/')[1];  // ['music','musicList'] => 'music'
+    switch(str){
+      case 'music':
+        this.bgColor = 'green';
+        break;
+      case 'movie':
+        this.bgColor = 'red';
+        break;
+    }
+
+
   }
+
+
+
 }
 </script>
 
@@ -40,4 +57,5 @@ export default {
 body{
   font-size:0.32rem;
 }
+
 </style>

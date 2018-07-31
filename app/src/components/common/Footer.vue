@@ -33,6 +33,13 @@
         color: #ccc;
 
     }
+    .footer li a{
+        color: #999;
+    }
+    .footer li a.router-link-active{
+        color: #fff;
+    }
+
 
 
 
