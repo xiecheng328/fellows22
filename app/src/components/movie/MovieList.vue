@@ -3,20 +3,23 @@
         <ul>
             <li class="movieList" v-for="(obj,index) in movieList" :key="index">
                 <div class="movie-img">
-                    <img :src="obj.images.small" alt="">
+                    <img :src="obj.img" alt="">
                 </div>
                 <div class="movie-info">
-                    <h3>{{obj.title}}</h3>
+                    <h3>{{obj.nm}}</h3>
                     <p>
-                        <span v-for="(val,index) in obj.genres" :key="index">{{val}}</span>
+                        {{obj.cat}}
                     </p>
                     <p>
-                        <span v-for="(person,index) in obj.casts" :key="index">{{person.name}}</span>
+                        {{obj.star}}
                     </p>
-                    <p>{{obj.year}}</p>
+                    <p>{{obj.showInfo}}</p>
                 </div>
             </li>
         </ul>
+        <div>
+            <img src="@/assets/loading.gif" alt="" v-show="isShow">
+        </div>
     </div>
 </template>
 
@@ -26,17 +29,41 @@
     export default {
         data(){
             return{
-                movieList:[]
+                movieList:[],
+                isShow:false
+            }
+        },
+        methods:{
+            load(){
+                axios.get('./static/data/moviedata0.json').then(res =>{
+                        this.movieList = res.data.data.movies;
+                }).catch(res => {
+                        console.log('获取数据失败');
+                });
             }
         },
         created () {
-           axios.get(Vue.config.url+'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=10').then(res =>{
-            //    this.movieList = res.data.subjects;
-                console.log(res);
-               console.log(this.movieList );
-           }).catch(res => {
+            this.load();
+          
+            window.onscroll = () => {
+               //取到滚动条滚动的高度
+                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                let clientHeight = document.documentElement.clientHeight;
+                let height = document.documentElement.scrollHeight;
+                
+                if(scrollTop + clientHeight == height){//到底部
+                    this.isShow = true;
+                    this.load();
 
-           });
+                }
+
+               
+
+           }
+
+
+
+
         }
     }
 </script>

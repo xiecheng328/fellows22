@@ -62,6 +62,8 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin:1rem 0;
+  overflow: hidden;
 }
 body{
   font-size:0.32rem;

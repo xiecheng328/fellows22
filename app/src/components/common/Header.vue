@@ -21,6 +21,9 @@
         line-height: 1rem;
         display: flex;
         color: #fff;
+        position: fixed;
+        top:0px;
+        width:100%;
     }
     .header-home,.header-space{
         width: 1rem;
