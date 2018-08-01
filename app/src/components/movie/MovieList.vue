@@ -30,9 +30,9 @@
             }
         },
         created () {
-           axios.get(Vue.config.url+'http://api.douban.com/v2/movie/top250?start=0&count=10').then(res =>{
-               this.movieList = res.data.subjects;
-
+           axios.get(Vue.config.url+'http://m.maoyan.com/movie/list.json?type=hot&offset=0&limit=10').then(res =>{
+            //    this.movieList = res.data.subjects;
+                console.log(res);
                console.log(this.movieList );
            }).catch(res => {
 
