@@ -1,10 +1,10 @@
 <template>
     <div>
         <ul class="footer" :style="{'background':bg}">
-            <li @click="$emit('change','red')"><router-link to="/movie/movieList">电影</router-link></li>
-            <li @click="$emit('change','green')"><router-link to="/music/musicList">音乐</router-link></li>
-            <li><router-link to="">书籍</router-link></li>
-            <li><router-link to="">图片</router-link></li>
+            <li @click="$emit('change','red','movie')"><router-link to="/movie/movieList">电影</router-link></li>
+            <li @click="$emit('change','green','music')"><router-link to="/music/musicList">音乐</router-link></li>
+            <li @click="$emit('change','blue','book')"><router-link to="/book">书籍</router-link></li>
+            <li @click="$emit('change','orange','photo')"><router-link to="/photo/photoList">图片</router-link></li>
         </ul>
     </div>
 </template>

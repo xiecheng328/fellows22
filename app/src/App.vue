@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-
-    <common-header :bg="bgColor" title="movie" ></common-header>
+    <common-header :bg="bgColor" :title="title" ></common-header>
         <router-view/>
     <common-footer :bg="bgColor" @change="fn"></common-footer>
   </div>
@@ -14,7 +13,8 @@ export default {
   name: 'App',
   data(){
     return{
-      bgColor:'red'
+      bgColor:'red',
+      title:'movie'
     }
   },
   components: {
@@ -22,15 +22,17 @@ export default {
     CommonFooter
   },
   methods: {
-    fn(color){
+    fn(color,title){
       console.log(color);
       // this.bg = color;
       this.bgColor = color;
+      this.title = title;
+
     }
   },
   created () {
     let url = this.$route.path; //    /music/musicList
-    let str = url.split('/')[1];  // ['music','musicList'] => 'music'
+    let str = url.split('/')[1];  // ['','music','musicList'] => 'music'
     switch(str){
       case 'music':
         this.bgColor = 'green';
@@ -38,6 +40,13 @@ export default {
       case 'movie':
         this.bgColor = 'red';
         break;
+      case 'book':
+        this.bgColor = 'blue';
+        break;
+      case 'photo':
+        this.bgColor = 'orange';
+        break;
+
     }
 
 
