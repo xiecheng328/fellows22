@@ -44,7 +44,6 @@
         },
         created () {
             this.load();
-          
             window.onscroll = () => {
                //取到滚动条滚动的高度
                 let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
