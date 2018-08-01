@@ -37,14 +37,12 @@
         methods:{
             load(){
                 axios.get(`./static/data/moviedata${this.movieList.length}.json`).then(res =>{
-                
                     this.resultLength = res.data.data.movies.length;
                     this.movieList = this.movieList.concat(res.data.data.movies);
                     this.isShow = false;
                 }).catch(res => {
                     console.log('获取数据失败');
                 });
-                
             }
         },
         created () {
