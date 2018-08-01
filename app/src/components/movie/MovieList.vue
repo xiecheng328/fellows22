@@ -30,30 +30,41 @@
         data(){
             return{
                 movieList:[],
-                isShow:false
+                isShow:false,
+                resultLength:0
             }
         },
         methods:{
             load(){
-                axios.get('./static/data/moviedata0.json').then(res =>{
-                        this.movieList = res.data.data.movies;
+                axios.get(`./static/data/moviedata${this.movieList.length}.json`).then(res =>{
+                
+                    this.resultLength = res.data.data.movies.length;
+                    this.movieList = this.movieList.concat(res.data.data.movies);
+                    this.isShow = false;
                 }).catch(res => {
-                        console.log('获取数据失败');
+                    console.log('获取数据失败');
                 });
+                
             }
         },
         created () {
             this.load();
             window.onscroll = () => {
-               //取到滚动条滚动的高度
+                 //取到滚动条滚动出去的高度（页面滚出去的高度 ）
                 let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                //页面可视区的高度
                 let clientHeight = document.documentElement.clientHeight;
+                //整个页面的高度
                 let height = document.documentElement.scrollHeight;
                 
                 if(scrollTop + clientHeight == height){//到底部
-                    this.isShow = true;
-                    this.load();
-
+                       
+                    
+                    if(this.resultLength == 10){
+                        this.isShow = true;
+                        this.load();
+                    }
+                    
                 }
 
                
