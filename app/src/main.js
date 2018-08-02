@@ -9,6 +9,7 @@ import '@/assets/rem.js'
 Vue.config.url = 'https://bird.ioliu.cn/v1?url=';
 Vue.config.productionTip = false
 
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

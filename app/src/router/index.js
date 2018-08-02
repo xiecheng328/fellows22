@@ -4,7 +4,7 @@ import MovieList from '@/components/movie/MovieList'
 import MusicList from '@/components/music/MusicList'
 import Book from '@/components/book/Book'
 import PhotoList from '@/components/photo/PhotoList'
-import movieDetail from '@/components/movie/movieDetail'
+import movieDetail from '@/components/movie/MovieDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -30,7 +30,7 @@ export default new Router({
         component:PhotoList
       },
       {
-        path:'/movie/movieDetail',
+        path:'/movie/movieDetail/:movieId',
         component:movieDetail
       }
 
