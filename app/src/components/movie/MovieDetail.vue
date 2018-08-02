@@ -1,9 +1,6 @@
 <template>
     <div>
-        test2
-
-        {{$route.params.name}}
-        {{$route.params.age}}
+        电影详情页
     </div>
 </template>
 

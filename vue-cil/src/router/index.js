@@ -19,6 +19,7 @@ export default new Router({
     },
     {
       path:'/test2/:username/:userid',
+      name:'test1',
       component:Test2
     },
     {
@@ -58,8 +59,8 @@ export default new Router({
       path:'/url/:usename/:age',
       component:Url
     },{
-      path:'/test/:usename/:age',
-      redirect:'/url/:usename/:age'
+      path:'/testurl/:age/:name',
+      component:Url
     },
     {
       path:'/test/:usename/:age',

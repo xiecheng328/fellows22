@@ -2,7 +2,7 @@
     <div>
         url传参
 
-        {{$route.params.usename}}
+        {{$route.params.name}}
         ----
         {{$route.params.age}}
 
