@@ -1,6 +1,6 @@
 <template>
     <div>
-        <aplayer autoplay  :list="musicdata" v-if="isShow"
+        <aplayer autoplay  :list="musicdata" v-if="isShow" :showLrc="true"
   :music="musicdata[0]"
 />
         <!-- {{$route.params.musicId}} -->
