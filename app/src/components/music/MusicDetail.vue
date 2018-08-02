@@ -1,12 +1,7 @@
 <template>
     <div>
-        <aplayer autoplay
-  :music="{
-    title: 'secret base~君がくれたもの~',
-    artist: 'Silent Siren',
-    src: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.mp3',
-    pic: 'https://moeplayer.b0.upaiyun.com/aplayer/secretbase.jpg'
-  }"
+        <aplayer autoplay  :list="musicdata" v-if="isShow"
+  :music="musicdata[0]"
 />
         <!-- {{$route.params.musicId}} -->
     </div>
@@ -16,21 +11,33 @@
     import aplayer from 'vue-aplayer'
     import axios from 'axios'
     export default {
+        data(){
+            return{
+                musicdata:[],
+                isShow:false
+            }
+        },
         components: {
             aplayer
         },
         created() {
             axios.get('./static/data/musicdata.json').then(res =>{
                 console.log(res.data.musicData);
+                res.data.musicData.forEach(obj => {
+                    this.musicdata.push({
+                        src:obj.src,
+                        title:obj.title,
+                        artist:obj.author,
+                        pic:obj.musicImgSrc,
+                        lrc:obj.lrc
+                    });
+                });
+                this.isShow = true;
             }).catch(res => {
                 
             });
 
-            [{
-                src:'',
-                title:''
-                artist:''
-            }]
+        
         }
 
 
