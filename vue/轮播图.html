@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .img-box img{
+            width:100%;
+            height:300px;   
+            display: none;
+        }
+        .img-box img.selected{
+            display: block;
+        }
+        #container{
+            position: relative;
+        }
+        .btn-box{
+            position: absolute;
+            right: 30px;
+            bottom:20px;
+            list-style: none;
+        }
+        .btn-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="img-box">
+            <img :class="{selected:index == 0}" v-for="(img,index) in imgs" :src="img" alt="">
+        </div>
+        <ul class="btn-box">
+            <li v-for="x in imgs.length">{{x}}</li>
+        </ul>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#container',
+            data:{
+                imgs:[
+                    "https://img3.doubanio.com/lpic/s24468373.jpg",
+                    "https://img3.doubanio.com/lpic/s27102925.jpg",
+                    "https://img3.doubanio.com/lpic/s6989253.jpg",
+                    "https://img3.doubanio.com/lpic/s6989253.jpg"
+                ]
+            }
+        });
+    
+    
+    
+    
+    </script>
+    
+</body>
+</html>
