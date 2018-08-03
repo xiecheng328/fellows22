@@ -36,18 +36,20 @@
             line-height: 20px;
             margin-right: 5px;
         }
+        .btn-box li.selected{
+            background:orange;
+        }
 
     </style>
 </head>
 <body>
-    <div id="container">
+    <div id="container" >
         <div class="img-box">
-            <img :class="{selected:index == 0}" v-for="(img,index) in imgs" :src="img" alt="">
+            <img :class="{selected:index == nowIndex}" v-for="(img,index) in imgs" :src="img" alt="">
         </div>
         <ul class="btn-box">
-            <li v-for="x in imgs.length">{{x}}</li>
+            <li v-for="(x,index) in imgs.length" :class="{selected:index==nowIndex}" @click="change(index)">{{x}}</li>
         </ul>
-
     </div>
     <script src="vue.js"></script>
     <script>
@@ -59,7 +61,22 @@
                     "https://img3.doubanio.com/lpic/s27102925.jpg",
                     "https://img3.doubanio.com/lpic/s6989253.jpg",
                     "https://img3.doubanio.com/lpic/s6989253.jpg"
-                ]
+                ],
+                nowIndex:0
+            },
+            methods: {
+                change(index){
+                    this.nowIndex = index;
+                }
+            },
+            created () {
+                setInterval(() => {
+                    this.nowIndex++;
+                    if(this.nowIndex == this.imgs.length){
+                        this.nowIndex = 0;
+                    }
+                },2000);
+
             }
         });
     
