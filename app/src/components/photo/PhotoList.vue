@@ -23,7 +23,7 @@
                 //调用store下的mutations 里的addPhoto方法 第二个参数是传的参数
                 this.$store.commit('addPhoto',this.photoData);
             }).catch( res => {
-
+                
             });
         },
     }
