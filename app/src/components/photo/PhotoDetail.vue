@@ -1,19 +1,40 @@
 <template>
-    <div class="photo" :style="{'background-image':url}">
-    </div>
+    <v-touch v-on:swipeleft="next()"   >
+        <div class="photo" :style="{'background-image':url}" @click="hide()">
+        </div>
+    </v-touch>
+    <!-- vue-touch
+    https://github.com/vuejs/vue-touch/tree/next
+    cnpm install vue-touch@next --save
+     -->
 </template>
 <script>
     export default {
         data(){
             return{
                  nowIndex:this.$route.params.phohoId,
-                 photolist:[],
-                 url:''
+                 photolist:[]
             }
         },
         created () {
            this.photolist = this.$store.state.photolist;
-           this.url = `url(${this.photolist[this.nowIndex].src})`;
+        },
+        computed: {
+            url(){
+                return `url(${this.photolist[this.nowIndex].src})`;
+            }
+        },
+        methods: {
+            next(){
+                this.nowIndex++;
+                if(this.nowIndex == this.photolist.length ){
+                    this.nowIndex = 0;
+                }
+            },
+            hide(){
+                console.log(222);
+                this.$router.push('/photo/photoList');
+            }
         }
     }
 </script>
