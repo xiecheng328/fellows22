@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import '@/assets/common.css'
 import '@/assets/rem.js'
+import store from '@/vuex/store'
 
 Vue.config.url = 'https://bird.ioliu.cn/v1?url=';
 Vue.config.productionTip = false
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
