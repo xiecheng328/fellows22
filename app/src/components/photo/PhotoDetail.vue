@@ -4,6 +4,7 @@
         </div>
     </v-touch>
     <!-- vue-touch
+    
     https://github.com/vuejs/vue-touch/tree/next
     cnpm install vue-touch@next --save
      -->
