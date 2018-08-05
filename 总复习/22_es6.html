@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    es6新特性 
+
+    let const 箭头函数 set map 解构 promise class    数组 对象 sting..增加新方法
+
+    一、let var 区别
+
+        1. let没有变量提升 
+        2. let 块级作用域 
+        3. let 不能重复声明 
+        4. let 暂时性死区 (在当前作用域内不允许同名的变量进来)
+
+        let const 区别
+    二、箭头函数和普通函数区别
+
+
+        1、this指向  箭头函数中的this声明时的this,也就是指向父作用域
+                    普通函数的this指执行时的this
+
+        2、不能 new 不能用于构造函数
+        3、不能用arguments
+
+
+
+
+
+    <script>
+        /* //4. let 暂时性死区
+        let a = 10;
+
+        function aa(){
+            console.log(a);
+            let a = 20;
+        }
+        aa();  */
+
+
+        /* const a = 5;
+
+        a=6; */
+
+        const arr = [1,2];
+        Object.freeze(arr);
+
+        arr[1] = 3;
+
+        console.log(arr);
+
+
+        /* function a(){
+           console.log( arguments);
+        }
+        a(1,2,3);
+ */
+        let a = (...rest) => {
+            // console.log(arguments);
+            console.log(rest);
+        }
+        a(1,2,3)
+
+        let arr = [1,2,3];
+
+        // let arr2 = arr;
+
+        let arr2 = [...arr];
+
+
+        let a = [1,2,2,3]
+
+        let b = new Set(a);
+
+        let c = [...b];
+
+
+
+        let [a,b] = [1,2];
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

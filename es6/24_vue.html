@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    指令 
+
+    生命周期
+
+    组件传值:
+
+    父到子 props
+    子到父 $emit();
+
+    vue双向数据绑定原理
+
+    VueJS 则使用 ES5 提供的访问器属性 Object.defineProperty() 方法，
+    监控对数据的操作，Object.defineProperty方法第一个参数是要设置的对象，
+    第二个参数是要对象的属性，第三个参数是一个对象，里面有set和get方法,
+    当设置属性值或者获取属性值的时候就会执行这个set，get方法。vue就是通过set方法，
+    做到vue数据变更时，同时渲染页面数据。vue也会给dom对象绑定事件，这样页面数据变更时，
+    也会对应的修改data.
+
+    https://segmentfault.com/a/1190000006599500
+
+    obj = {
+        name:'zs'
+    }
+    Object.defineProperty(obj,name,{
+        set
+
+        get
+    })
+
+
+    2. 虚拟dom  diff算法   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

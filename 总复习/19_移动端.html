@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    如何实现响应式  ？
+
+    媒体查询 media query
+
+    百分比 
+
+    弹性盒模型
+
+    rem  原理  
+
+    px em rem 
+
+    em 相对于父元素 
+
+    rem 相对根元素 html
+
+
+;(function(win) {
+    var doc = win.document;
+    var docEl = doc.documentElement;
+    var tid;
+
+    function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        var rem = width / 6.4; // 将屏幕宽度分成6.4份， 1份为1rem
+
+
+        docEl.style.fontSize = rem + 'px';
+        console.log(0.14*rem);
+    }
+
+    win.addEventListener('resize', function() {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 10);
+    }, false);
+    win.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 10);
+        }
+    }, false);
+
+    refreshRem();
+})(window);
+
+    移动端常见问题  点透 
+    
+    1px   scaleY(0.5)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    bootstrap 栅格布局 12等分  
+
+
+
+
+
+
+
+    
+</body>
+</html>
