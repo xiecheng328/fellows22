@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>1111</li>
+        <li>222</li>
+    </ul>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    <script>
+    //事件委托 解决后生成元素的事件绑定
+
+    var oBtn = document.getElementById('btn');
+    var oUl = document.getElementById('ul1');
+    var aLi = document.getElementsByTagName('li');
+
+    /* for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);
+        }
+    } */
+    oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oUl.appendChild(oLi);
+    }
+  /*   oUl.onclick = function(e){
+        // console.log(1111);
+        // console.log(e.target);
+        if(e.target.tagName == 'LI'){
+            console.log(e.target.innerHTML);
+        }
+    } */
+
+  /*   $('li').on('click',function(){
+        console.log($(this).html());
+    }); */
+
+    $('ul').on('click','li',function(){
+        console.log($(this).html());
+    });
+
+    
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

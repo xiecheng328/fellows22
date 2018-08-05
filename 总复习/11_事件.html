@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+
+        #div2 {
+            width: 300px;
+            height: 300px;
+            background: #00ff00;
+        }
+
+        #div3 {
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+        }
+
+
+    </style>
+</head>
+<body id="body">
+<div id="div1">
+    <div id="div2" >
+        <div id="div3"></div>
+    </div>
+</div>
+
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+    var oBody = document.getElementById('body');
+    var oHtml = document.getElementById('html');
+
+   /*  oDiv1.onclick = function(){
+        console.log('div1');
+    };
+    oDiv2.onclick = function(){
+        console.log('div2');
+    };
+    oDiv3.onclick = function(){
+        console.log('div3');
+    };
+    oBody.onclick = function(){
+        console.log('body');
+    };
+    oHtml.onclick = function(){
+        console.log('html');
+    }; */
+
+
+   /*  oDiv1.addEventListener('click', function(e){
+         console.log('div1 捕获');
+        //  e.stopPropagation();
+     }, true);
+     oDiv2.addEventListener('click', function(e){
+         console.log('div2 捕获');
+        //  e.stopPropagation();
+     }, true);
+     oDiv3.addEventListener('click', function(e){
+         console.log('div3 捕获');
+        //  e.stopPropagation();
+     }, true); */
+
+
+
+     /* oDiv1.onclick = function(){
+         console.log(111);
+     }
+     oDiv1.onclick = function(){
+         console.log(222);
+     } */
+
+    /*  oDiv1.addEventListener('click',function(){
+         console.log(111);
+     },false);
+     oDiv1.addEventListener('click',function(){
+         console.log(222);
+     },false); */
+
+     oDiv1.addEventListener('click',function(){
+         console.log('div1捕获');
+     },true);   //false 冒泡  true捕获（ie不支持捕获）
+     oDiv2.addEventListener('click',function(){
+         console.log('div2捕获');
+     },true); 
+     oDiv3.addEventListener('click',function(){
+         console.log('div3捕获');
+     },true); 
+
+     oDiv1.addEventListener('click',function(e){
+         console.log('div1冒泡');
+        e.stopPropagation();
+     },false); 
+     oDiv2.addEventListener('click',function(e){
+         console.log('div2冒泡');
+         e.stopPropagation();
+     },false);   
+     oDiv3.addEventListener('click',function(e){
+         console.log('div3冒泡');
+         //阻止冒泡
+         e.stopPropagation();
+         e.cancelBubble = true;
+         //阻止默认行为
+         preventDefault();
+         returnValue = false;
+
+         return false;
+
+     },false); 
+   
+    /* 事件机制 事件捕获  事件冒泡
+        事件冒泡  从里往外
+        事件捕获  从外向里
+
+        先捕获后冒泡   从外向里  从里往外
+     */
+
+     
+
+
+
+
+
+</script>
+</body>
+</html>

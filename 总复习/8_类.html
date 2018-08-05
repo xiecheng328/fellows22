@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person1 = {
+            name:'zs',
+            age:20,
+            say:function(){
+
+            }
+        }
+
+        /* 类 具有相同属性 方法的对象的集合
+            属性写在构造函数中
+            方法写在原型下
+         */
+
+
+        function Person(name,age){ //构造函数
+            this.name= name;
+            this.age = age;
+        }
+
+        /* Person.prototype.name = 'zs';
+        Person.prototype.father = {
+            name:'zx'
+        } */
+
+        Person.prototype.say = function(){
+            console.log(this.name +"dfghjkl");
+        }
+
+
+        var p1 = new Person(20);
+        var p2 = new Person(30);
+        console.log(p1.father.name);
+        console.log(p2.father.name);
+
+        p1.father.name = 'zxx';
+
+
+        console.log(p1.father.name);
+        console.log(p2.father.name);
+
+
+
+
+
+       /*  p1.name = 'lisi';
+        console.log(p1.name);
+
+        console.log(p2);
+        console.log(p2.name); */
+
+
+        // p1.say();
+
+
+
+        
+
+
+    
+    
+    
+    
+    
+    </script>
+
+
+
+    
+</body>
+</html>

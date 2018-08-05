@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        闭包是指外部函数里声明内部函数，内部函数引用外部函数里的局部变量，
+        这样当外部函数调用完毕以后，局部变量不被释放，可以一直使用。
+
+        具体应用：在一个ul里有多个li，单击li的时候显示自己的索引，
+        实现方式是，在for循环给li绑定事件时，在for循环里添加函数立即调用，
+        为这个函数立即调用传递i做为实参，定义index为形参。然后在这个函数立即调用里给
+        li注册单击事件，在单击事件里alert函数立即调用中的形参index
+    -->
+    <ul id="ul1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById('ul1');
+        var aLi = oUl.getElementsByTagName('li');
+        /* for(var i=0; i<aLi.length; i++){
+            (function(index){
+                aLi[index].onclick = function(){
+                    alert(index);//获取li的索引
+                };
+            })(i);
+        } */
+
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                alert(i);//获取li的索引
+            };
+        }
+
+        
+
+
+        
+
+
+
+   
+    </script>
+</body>
+</html>

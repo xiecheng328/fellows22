@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*  //1、函数中  定时器中  this指向window
+    function a(){
+        console.log(this)  
+    }
+
+    a();
+
+    setInterval(function(){
+        console.log(this);
+    },1000);
+
+    //2、指向点击的元素（对当前对象的引用）
+    oDiv.onclick = function(){
+        console.log(this); //oDiv
+    }
+    //3、对象中  当前对象
+    var obj = {
+        name:'zs',
+        say:function(){
+            console.log(this);  //obj
+        }
+    }
+
+    obj.say();
+
+    //4、类中 this指向new出来的实例化对象
+    function Person(name){
+        this.name = name;
+    }
+
+    var person1 = new Person('zs');
+
+    //5、箭头函数中  this指的是声明时的this   (父作用域中的this)
+ */
+
+
+    //改变this指向方式
+
+
+    function aa(num1,num2){
+        console.log(this,num1,num2);
+        
+    }
+
+    aa();
+
+    var obj = {
+        name:'zs'
+    }
+
+   //改变this指向的方式
+    aa.call(obj,1,2);
+
+    aa.apply(obj,[1,2]);
+
+    aa.bind(obj,1,2)();
+
+
+
+
+    
+    
+    </script>
+
+    
+    
+</body>
+</html>

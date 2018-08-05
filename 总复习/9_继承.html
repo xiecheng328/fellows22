@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //prototype 原型对象  类 prototype属性 
+        // 指向原型对象 (写在原型对象下的属性和方法 能被实例化对象继承)
+
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.say = function(){
+            console.log( this.name +" is say.....");
+        }
+        //1.在构造函数中通过 父类.call() 继承属性
+        function Coder(name,age){ 
+            Person.call(this,name,age);
+        }
+        //改变this指向 
+
+        // 子类.prototype = new 父类的实例化对象 继承方法
+        Coder.prototype = new Person();
+        //prototype.constructor 需要改回来 改成子类
+        Coder.prototype.constructor = Coder;
+
+        var coder1 = new Coder('zs',20);
+
+        console.log(coder1);
+
+        coder1.say();
+
+        console.log(  Coder.prototype.constructor    );
+
+
+
+
+    
+    
+    
+    
+    
+    
+    </script>
+
+    
+</body>
+</html>
