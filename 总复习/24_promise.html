@@ -9,6 +9,67 @@
 <body>
 
     <script>
+
+
+       /*  $.get('a.json',function(data){
+            if(data.status == 1){
+                $.get('b.json',function(data){
+                    //ghjkl;
+                })
+            }else{
+            }
+        }) */
+        /* var p1 = new Promise(function(resolve,reject){
+            $.get('a.json',function(data){
+                if(data.status == 1){
+                    resolve(111);
+                }else{
+                    reject(222);
+                }
+            })
+        }).then(function(res){
+            //再发请求
+            console.log('okok');
+        }).catch(function(res){
+            console.log('nonono');
+        }); */
+
+       
+        let p1 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p1 ok');
+                resolve();
+            },1000);
+        });
+        let p2 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p2 ok');
+                reject();
+            },1500);
+        }); 
+        let p3 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p3 ok');
+                // resolve();
+                reject();
+            },800);
+        });  
+        /* Promise.all([p1,p2,p3]).then(function(){
+            console.log('1111'); 
+        },function(){
+            console.log('0000');
+        });   */
+
+        Promise.race([p1,p2,p3]).then(function(){
+            console.log('1111'); 
+        },function(){
+            console.log('0000');
+        });    
+
+
+        
+
+        //异步进入等待队列 20ms后放到执行队列，如果执行队列有等待的 就会在后边排队等待
         setTimeout(function(){
             console.log(111);
         },20);
