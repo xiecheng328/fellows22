@@ -15,7 +15,7 @@
         <li class="ab">4</li>
     </ul>
     <script>
-        function getEleBylass(name){
+        /* function getEleBylass(name){
             var result = [];
             var ele = document.getElementsByTagName('*');
             for(var i=0; i<ele.length; i++){
@@ -28,11 +28,22 @@
                 });
             }
             return result;
+        } */
+
+        function getEleBylass(name){
+            var result = [];
+            var ele = document.getElementsByTagName('*');
+            for(var i=0; i<ele.length; i++){
+                //"aa bb cc"
+                var reg = new RegExp('\\b'+name+'\\b');
+                if(reg.test(ele[i].className)){
+                    result.push(ele[i]);
+                }
+            }
+            return result;
         }
         console.log( getEleBylass('bb') );  //[]
-
         
-
         //document.getElementByClassName();
 
 
